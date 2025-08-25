@@ -1,6 +1,5 @@
 import { LucideArrowRight, LucideSend } from "lucide-react"
 
-import { BuiltWith } from "@/components/shared"
 import { Button, Container, Typography } from "@/components/ui"
 import { BoxReveal } from "@/components/widgets"
 
@@ -30,7 +29,7 @@ const HeroSection = () => {
 					</BoxReveal>
 
 					<BoxReveal>
-						<div className="w-full flex flex-col sm:flex-row justify-center gap-2">
+						<div className="w-full flex flex-col sm:flex-row justify-center gap-4">
 							<Button>
 								<LucideSend strokeWidth={2.5} />
 								Lets Connect
@@ -44,7 +43,7 @@ const HeroSection = () => {
 				</div>
 			</div>
 
-			<BuiltWith />
+			{/* <BuiltWith /> */}
 		</Container>
 	)
 }

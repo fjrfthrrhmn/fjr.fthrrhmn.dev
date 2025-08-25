@@ -1,55 +1,74 @@
-import React, { forwardRef, JSX } from 'react';
+import React, { forwardRef, JSX } from "react"
 
+import { cva, VariantProps } from "class-variance-authority"
 
+import { cn } from "@/lib/utils"
 
-import { cva, VariantProps } from 'class-variance-authority';
+type TitleStyleProps = VariantProps<typeof TitleStyles>
 
-
-
-import { cn } from '@/lib/utils';
-
-
-
-
-
-type TitleStyleProps = VariantProps<typeof TitleStyles>;
-
-interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement>, Omit<TitleStyleProps, 'level' | 'weight'> {
-  variant: `${NonNullable<TitleStyleProps['level']>}/${NonNullable<TitleStyleProps['weight']>}`;
+interface TitleProps
+	extends React.HTMLAttributes<HTMLHeadingElement>,
+		Omit<TitleStyleProps, "level" | "weight"> {
+	variant: `${NonNullable<TitleStyleProps["level"]>}/${NonNullable<TitleStyleProps["weight"]>}`
 }
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
-  const { children, variant, className, ...rest } = props;
+	const { children, variant, className, ...rest } = props
 
-  const [level, weight] = variant.split('/') as [TitleStyleProps['level'], TitleStyleProps['weight']];
+	const [level, weight] = variant.split("/") as [
+		TitleStyleProps["level"],
+		TitleStyleProps["weight"]
+	]
 
-  const Comp = `h${level}` as any;
+	const Comp = `h${level}` as any
 
-  return (
-    <Comp ref={ref} className={cn(TitleStyles({ level, weight }), className)} {...rest}>
-      {children}
-    </Comp>
-  );
-});
+	return (
+		<Comp
+			ref={ref}
+			className={cn(TitleStyles({ level, weight }), className)}
+			{...rest}
+		>
+			{children}
+		</Comp>
+	)
+})
 
-type TextStyleProps = VariantProps<typeof TextStyles>;
+type TextStyleProps = VariantProps<typeof TextStyles>
 
-interface TextProps extends React.HTMLAttributes<HTMLParagraphElement>, Omit<TextStyleProps, 'size' | 'weight'> {
-  variant?: `${NonNullable<TextStyleProps['size']>}/${NonNullable<TextStyleProps['weight']>}`;
-  as?: keyof Pick<JSX.IntrinsicElements, 'p' | 'code' | 'strong' | 'span' | 'small' | 'mark' | 'kbd'>;
+interface TextProps
+	extends React.HTMLAttributes<HTMLParagraphElement>,
+		Omit<TextStyleProps, "size" | "weight"> {
+	variant?: `${NonNullable<TextStyleProps["size"]>}/${NonNullable<TextStyleProps["weight"]>}`
+	as?: keyof Pick<
+		JSX.IntrinsicElements,
+		"p" | "code" | "strong" | "span" | "small" | "mark" | "kbd"
+	>
 }
 
 const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => {
-  const { as: Tag = 'p', children, className, variant = 'base/normal', ...rest } = props;
+	const {
+		as: Tag = "p",
+		children,
+		className,
+		variant = "md/normal",
+		...rest
+	} = props
 
-  const [size, weight] = variant?.split('/') as [TextStyleProps['size'], TextStyleProps['weight']];
+	const [size, weight] = variant?.split("/") as [
+		TextStyleProps["size"],
+		TextStyleProps["weight"]
+	]
 
-  return (
-    <Tag ref={ref} className={cn(TextStyles({ size, weight, className }))} {...rest}>
-      {children}
-    </Tag>
-  );
-});
+	return (
+		<Tag
+			ref={ref}
+			className={cn(TextStyles({ size, weight, className }))}
+			{...rest}
+		>
+			{children}
+		</Tag>
+	)
+})
 
 const TitleStyles = cva(["leading-none text-pretty"], {
 	variants: {
@@ -72,28 +91,27 @@ const TitleStyles = cva(["leading-none text-pretty"], {
 	}
 })
 
-const TextStyles = cva(['leading-normal text-pretty text-paragraph'], {
-  variants: {
-    size: {
-      xl: 'text-xl',
-      lg: 'text-lg',
-      md: 'text-base',
-      sm: 'text-sm',
-      xs: 'text-xs muted-foreground',
-    },
-    weight: {
-      normal: 'font-normal',
-      medium: 'font-medium',
-      semibold: 'font-semibold',
-      bold: 'font-bold',
-      black: 'font-black',
-    },
-  },
-});
+const TextStyles = cva(["leading-normal text-pretty text-paragraph"], {
+	variants: {
+		size: {
+			xl: "text-2xl",
+			lg: "text-xl",
+			md: "text-lg",
+			sm: "text-base",
+			xs: "text-sm"
+		},
+		weight: {
+			normal: "font-normal",
+			medium: "font-medium",
+			semibold: "font-semibold",
+			bold: "font-bold",
+			black: "font-black"
+		}
+	}
+})
 
-Title.displayName = 'Title';
-Text.displayName = 'Text';
+Title.displayName = "Title"
+Text.displayName = "Text"
 
-const Typography = { Title, Text };
-
-export default Typography;
+const Typography = { Title, Text }
+export default Typography

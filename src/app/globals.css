@@ -48,10 +48,14 @@
 	--radius-xl: calc(var(--radius) + 4px);
 
 	@keyframes gradient {
-		0%, 100% { background-position: 0% 50% }
-		50% { background-position: 100% 50% }
+		0%,
+		100% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
 	}
-	
 }
 
 @theme {
@@ -64,8 +68,6 @@
 
 @utility container {
 	margin-inline: auto;
-	padding-inline: 16px;
-	padding-block: 16px;
 }
 
 :root {

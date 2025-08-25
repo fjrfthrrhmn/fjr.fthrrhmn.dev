@@ -1,6 +1,6 @@
 "use server"
 
-import { HeroSection } from "@/components/features/home"
+import { AboutSection, HeroSection } from "@/components/features/home"
 import { DotPattern } from "@/components/widgets"
 
 export default async function Home() {
@@ -14,6 +14,7 @@ export default async function Home() {
 				/>
 			</div>
 			<HeroSection />
+			<AboutSection />
 		</>
 	)
 }

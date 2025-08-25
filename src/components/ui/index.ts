@@ -4,6 +4,8 @@ export { Input } from "./input"
 export { Label } from "./label"
 export { Container } from "./main"
 export { default as Typography } from "./typography"
+export { Title } from "./title"
+export { CardCustom } from "./card-custom"
 export { Toaster } from "./sonner"
 export {
 	Form,
