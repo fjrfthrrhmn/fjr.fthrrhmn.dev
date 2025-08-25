@@ -2,6 +2,8 @@ export { Button } from "./button"
 export { Skeleton } from "./skeleton"
 export { Input } from "./input"
 export { Label } from "./label"
+export { Container } from "./main"
+export { default as Typography } from "./typography"
 export { Toaster } from "./sonner"
 export {
 	Form,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { DM_Mono, Gabarito, Martian_Mono } from "next/font/google";
+import { Gabarito, Martian_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -9,8 +9,6 @@ import { routing } from "@/i18n/routing";
 import { APP_CONFIG } from "@/constants";
 
 import { Providers } from "@/providers";
-
-import { Footer } from "@/shared";
 
 import "./../globals.css";
 
@@ -109,7 +107,6 @@ export default async function RootLayout({
 				<NextIntlClientProvider locale={locale}>
 					<Providers>
 						<main className="flex-1">{children}</main>
-						<Footer />
 					</Providers>
 				</NextIntlClientProvider>
 			</body>
