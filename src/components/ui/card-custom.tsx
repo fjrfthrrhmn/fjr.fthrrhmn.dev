@@ -1,8 +1,13 @@
-import React from "react"
+import React from "react";
 
-import { cn } from "@/lib/utils"
 
-import { DotPattern } from "../widgets"
+
+import { cn } from "@/lib/utils";
+
+
+
+import { DotPattern } from "../widgets";
+
 
 type CardCustomProps = {
 	color?: string
@@ -11,13 +16,13 @@ type CardCustomProps = {
 const CardCustom = React.forwardRef<HTMLDivElement, CardCustomProps>(
 	({ children, className, color, ...props }, ref) => {
 		const classes = cn(
-			"relative overflow-hidden p-6 rounded-2xl border bg-zinc-800",
+			"relative overflow-hidden p-6 rounded-2xl border-2 bg-zinc-800",
 			className
 		)
 
 		return (
 			<div ref={ref} className={classes} {...props}>
-				<span className="z-10">{children}</span>
+				{children}
 
 				<DotPattern
 					className={cn(

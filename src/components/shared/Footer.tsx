@@ -1,36 +1,33 @@
 import { useTranslations } from "next-intl"
-import Image from "next/image"
-import Link from "next/link"
 
-import { Turkiye } from "@/components/icons"
+import { Typography } from "../ui"
 
-export default function Footer() {
+const Footer = () => {
 	const t = useTranslations("Footer")
 
 	return (
-		<footer>
-			<div className="container">
-				<div className="flex justify-center items-center gap-2 py-10">
-					<span>{t("projectBy")}</span>
+		<>
+			<footer className="py-12  bg-zinc-950">
+				<div className="container grid grid-cols-4">
+					<div className="col-span-2">
+						<Typography.Text variant="md/normal">
+							© 2021 – present Akash Hamirwasia.
+						</Typography.Text>
+					</div>
 
-					<Image
-						src="/nice-avatar.png"
-						alt="Ömer Gülçiçek Avatar"
-						width={32}
-						height={32}
-					/>
-
-					<Link
-						href="https://omergulcicek.com?utm_source=nextjs-boilerplate"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="flex gap-2 items-center"
-					>
-						<span className="font-bold hover:underline">Ömer Gülçiçek</span>
-						<Turkiye />
-					</Link>
+					<div className="col-span-2 flex gap-4 justify-between">
+						{["Projects", "Blog", "Talks", "Store", "Slides", "Contact"].map(
+							(item) => {
+								return (
+									<Typography.Text variant="md/normal">{item}</Typography.Text>
+								)
+							}
+						)}
+					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</>
 	)
 }
+
+export default Footer
