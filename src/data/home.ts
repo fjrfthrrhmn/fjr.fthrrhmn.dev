@@ -71,26 +71,41 @@ export const StacksBuiltData: StackBuiltProps[] = [
 export const ExperiencesData: ExperienceProps[] = [
 	{
 		company: "FathForce",
-		role: "FullStack Developer",
+		role: "FullStack Dev",
 		logo: "https://i.pinimg.com/736x/5e/46/f4/5e46f453dc9073f168464c2563d672a0.jpg",
-		startDate: "Sep 2025",
-		endDate: "Des 2025"
+		startDate: { month: "Sep", year: 2025 },
+		endDate: { month: "Des", year: 2025 }
 	},
 	{
 		company: "TechNova",
 		role: "Frontend Engineer",
 		logo: "https://avatars.githubusercontent.com/u/14101776?s=200&v=4",
-		startDate: "Jan 2024",
-		endDate: "Jul 2024"
+		startDate: { month: "Jan", year: 2024 },
+		endDate: "Present"
 	},
 	{
-		company: "Cloudify",
-		role: "Backend Engineer",
-		logo: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-		startDate: "Aug 2023",
-		endDate: "Dec 2023"
+		company: "Juara Bootcamp",
+		role: "FullStack Bootcamp",
+		logo: "https://i.pinimg.com/736x/92/5a/49/925a494f1d948db5dd8a8c4b863a6489.jpg",
+		startDate: { month: "Jun", year: 2023 },
+		endDate: { month: "Aug", year: 2023 }
+	},
+	{
+		company: "InternHub",
+		role: "Frontend Intern",
+		logo: "https://i.pinimg.com/736x/d9/02/5f/d9025f745376e206500f9b3a7500f241.jpg",
+		startDate: { month: "Jan", year: 2023 },
+		endDate: { month: "May", year: 2023 }
+	},
+	{
+		company: "Hackathon Winner",
+		role: "1st Place Winner",
+		logo: "https://i.pinimg.com/1200x/f5/b2/ad/f5b2ad99a341417962385990077705dc.jpg",
+		startDate: { month: "Dec", year: 2022 },
+		endDate: { month: "Dec", year: 2022 }
 	}
 ]
+
 
 export const SkillsData: SkillProps[] = [
   {

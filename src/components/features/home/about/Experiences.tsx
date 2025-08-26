@@ -35,7 +35,7 @@ const ExperienceItem = ({ ...props }: ExperienceProps) => {
 
 	return (
 		<div className="w-full flex gap-4 items-center not-first:mt-6">
-			<Avatar size="size-8">
+			<Avatar size="size-10">
 				<Image src={logo} alt={company} width={100} height={100} unoptimized />
 			</Avatar>
 
@@ -47,8 +47,31 @@ const ExperienceItem = ({ ...props }: ExperienceProps) => {
 			</div>
 
 			<Typography.Text variant="xs/normal" className="text-end">
-				{startDate} - {endDate}
+				{formatExperienceDate(startDate, endDate)}
 			</Typography.Text>
 		</div>
+	)
+}
+
+const formatExperienceDate = (
+	startDate: { month: string; year: number },
+	endDate: { month: string; year: number } | "Present"
+) => {
+	if (endDate === "Present") {
+		return (
+			<>
+				{startDate.month} {startDate.year}
+				<br />
+				{endDate}
+			</>
+		)
+	}
+
+	return (
+		<>
+			{startDate.month} {startDate.year} - {endDate.month}
+			<br />
+			{endDate.year}
+		</>
 	)
 }
