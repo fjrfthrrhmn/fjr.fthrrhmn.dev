@@ -15,7 +15,7 @@ const Experiences = () => {
 
 			<ScrollArea className={cn(expanded ? "h-[600px]" : "h-[400px]", "mt-6")}>
 				{[...Array(8)].map((item) => {
-					return <ExperienceItem />
+					return <ExperienceItem key={item} />
 				})}
 
 				<ScrollBar orientation="vertical" />

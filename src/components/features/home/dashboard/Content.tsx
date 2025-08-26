@@ -1,13 +1,11 @@
-import { CardCustom } from "@/components/ui"
-
-import { CalendarGithub, ProfileGithub } from "./github"
+import { CalendarGithub, ProfileGithub, StatsGithub } from "./github"
 
 const Content = () => {
 	return (
 		<div className="col-span-11">
 			<div className="grid grid-cols-6 gap-4">
 				<ProfileGithub />
-				<CardCustom className="col-span-3">Something</CardCustom>
+				<StatsGithub/>
 				<CalendarGithub />
 			</div>
 		</div>

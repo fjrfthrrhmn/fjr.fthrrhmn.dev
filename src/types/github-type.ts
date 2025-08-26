@@ -18,9 +18,19 @@ export interface GithubUserType {
 	contributionsCollection: ContributionsType
 }
 
-interface ContributionsType {
+export interface ContributionsType {
 	totalCommitContributions: number
 	totalPullRequestContributions: number
 	totalIssueContributions: number
 	totalRepositoryContributions: number
+	contributionCalendar: ContributionCalendar
+}
+
+export interface ContributionCalendar {
+	weeks: {
+		contributionDays: {
+			date: string
+			contributionCount: number
+		}[]
+	}[]
 }

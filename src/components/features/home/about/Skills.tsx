@@ -15,6 +15,7 @@ const Skills = () => {
 				{[...Array(20)].map((item) => {
 					return (
 						<GlassIcon
+							key={item}
 							name="JavaScript"
 							icon={SiJavascript}
 							background="bg-[hsla(0,0%,100%,0.15)] backdrop-blur-[0.75em]"

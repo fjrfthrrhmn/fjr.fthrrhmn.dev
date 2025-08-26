@@ -7,4 +7,5 @@ export { Header } from "./Header"
 
 export { LinkPreview } from "./LinkPreview"
 export { BoxReveal } from "./BoxReveal"
+export { NumberTicker } from "./NumberTicker"
 export { DotPattern } from "./DotPattern"

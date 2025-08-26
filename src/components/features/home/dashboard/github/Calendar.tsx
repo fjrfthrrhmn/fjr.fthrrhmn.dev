@@ -18,6 +18,7 @@ const calendarConfig: ActivityCalendarProps = {
 	fontSize: 14,
 	colorScheme: "dark",
 	transformData: (data) => data,
+	hideTotalCount: true,
 	theme: { dark: ["#373737", "#065f46", "#059669", "#34d399", "#86efac"] },
 	renderBlock: (block, activity) => {
 		if (!activity) return block

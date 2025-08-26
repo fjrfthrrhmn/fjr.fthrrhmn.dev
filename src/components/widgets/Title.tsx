@@ -40,13 +40,6 @@ export function Title() {
 					})}
 				</p>
 			</Balancer>
-
-			<Button asChild>
-				<Link href={APP_CONFIG.GITHUB_URL} target="_blank">
-					<Github className="w-4 h-4" />
-					{t("starOnGithub")}
-				</Link>
-			</Button>
 		</div>
 	)
 }
