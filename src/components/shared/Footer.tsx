@@ -1,10 +1,6 @@
-import { useTranslations } from "next-intl"
-
 import { Typography } from "../ui"
 
 const Footer = () => {
-	const t = useTranslations("Footer")
-
 	return (
 		<>
 			<footer className="py-12  bg-zinc-950">
@@ -17,9 +13,11 @@ const Footer = () => {
 
 					<div className="col-span-2 flex gap-4 justify-between">
 						{["Projects", "Blog", "Talks", "Store", "Slides", "Contact"].map(
-							(item) => {
+							(item, index) => {
 								return (
-									<Typography.Text variant="md/normal">{item}</Typography.Text>
+									<Typography.Text key={index} variant="md/normal">
+										{item}
+									</Typography.Text>
 								)
 							}
 						)}

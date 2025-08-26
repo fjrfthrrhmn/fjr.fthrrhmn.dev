@@ -2,6 +2,7 @@
 
 import {
 	AboutSection,
+	DashboardSection,
 	HeroSection,
 	ProjectsSection
 } from "@/components/features/home"
@@ -21,6 +22,7 @@ export default async function Home() {
 				</div>
 				<HeroSection />
 				<AboutSection />
+				<DashboardSection />
 				<ProjectsSection />
 				<CTA />
 			</div>

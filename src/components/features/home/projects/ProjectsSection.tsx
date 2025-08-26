@@ -27,9 +27,9 @@ const ProjectsSection = () => {
 			</div>
 
 			<div className="grid grid-cols-2 gap-6">
-				{[...Array(4)].map((item) => {
+				{[...Array(4)].map((item, index) => {
 					return (
-						<CardCustom className="group">
+						<CardCustom key={index} className="group">
 							<div className="flex flex-col justify-between mb-6">
 								<Typography.Title variant="2/extrabold">UnTab</Typography.Title>
 

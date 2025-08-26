@@ -18,14 +18,14 @@ const sansFont = Gabarito({
 	variable: "--font-sans",
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["400", "500", "600", "700", "800", "900"]
+	weight: ["400", "500", "600", "700", "800", "900"],
 })
 
 const monoFont = Martian_Mono({
 	variable: "--font-mono",
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["300", "400", "500"]
+	weight: ["300", "400", "500"],
 })
 
 export const metadata: Metadata = {
