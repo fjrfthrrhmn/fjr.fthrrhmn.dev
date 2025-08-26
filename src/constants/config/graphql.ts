@@ -12,6 +12,14 @@ export const GET_PROFILE_GITHUB = `
         totalPullRequestContributions
         totalIssueContributions
         totalRepositoryContributions
+        contributionCalendar {
+        weeks {
+          contributionDays {
+              date
+              contributionCount
+            }
+          }
+        }
       }
     }
   }

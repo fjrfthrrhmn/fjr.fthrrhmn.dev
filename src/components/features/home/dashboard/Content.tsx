@@ -7,7 +7,7 @@ const Content = () => {
 		<div className="col-span-11">
 			<div className="grid grid-cols-6 gap-4">
 				<ProfileGithub />
-				<CardCustom className="col-span-4">Something</CardCustom>
+				<CardCustom className="col-span-3">Something</CardCustom>
 				<CalendarGithub />
 			</div>
 		</div>

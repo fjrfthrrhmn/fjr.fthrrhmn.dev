@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { hasLocale, NextIntlClientProvider } from "next-intl"
-import { Gabarito, Martian_Mono } from "next/font/google"
+import { Gabarito, JetBrains_Mono } from "next/font/google"
 import { notFound } from "next/navigation"
 import { GoogleAnalytics } from "@next/third-parties/google"
 
@@ -21,7 +21,7 @@ const sansFont = Gabarito({
 	weight: ["400", "500", "600", "700", "800", "900"],
 })
 
-const monoFont = Martian_Mono({
+const monoFont = JetBrains_Mono({
 	variable: "--font-mono",
 	subsets: ["latin"],
 	display: "swap",
