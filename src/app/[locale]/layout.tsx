@@ -12,20 +12,20 @@ import { Providers } from "@/providers"
 
 import "./../globals.css"
 
-import { Footer } from "@/components/shared"
+import { Footer, Navigation } from "@/components/shared"
 
 const sansFont = Gabarito({
 	variable: "--font-sans",
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["400", "500", "600", "700", "800", "900"],
+	weight: ["400", "500", "600", "700", "800", "900"]
 })
 
 const monoFont = JetBrains_Mono({
 	variable: "--font-mono",
 	subsets: ["latin"],
 	display: "swap",
-	weight: ["300", "400", "500"],
+	weight: ["300", "400", "500"]
 })
 
 export const metadata: Metadata = {
@@ -109,6 +109,7 @@ export default async function RootLayout({
 				<NextIntlClientProvider locale={locale}>
 					<Providers>
 						<main className="flex-1">{children}</main>
+						<Navigation />
 						<Footer />
 					</Providers>
 				</NextIntlClientProvider>

@@ -1,7 +1,6 @@
-import { SiJavascript } from "react-icons/si"
-
 import { Title } from "@/components/ui"
-import GlassIcon from "@/components/widgets/GlassIcon"
+import { GlassIcon } from "@/widgets"
+import { SkillsData } from "@/data/home"
 
 const Skills = () => {
 	return (
@@ -11,14 +10,14 @@ const Skills = () => {
 				description="I have experience in various programming languages and frameworks."
 			/>
 
-			<div className="flex justify-start gap-x-6 gap-y-10 flex-wrap mt-6 mb-6">
-				{[...Array(20)].map((item) => {
+			<div className="flex justify-start gap-x-8 gap-y-10 flex-wrap mt-6 mb-6">
+				{SkillsData.map((item, index) => {
 					return (
 						<GlassIcon
-							key={item}
-							name="JavaScript"
-							icon={SiJavascript}
-							background="bg-[hsla(0,0%,100%,0.15)] backdrop-blur-[0.75em]"
+							key={index}
+							name={item.name}
+							icon={item.icon}
+							background={item.background}
 						/>
 					)
 				})}

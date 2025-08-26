@@ -1,3 +1,4 @@
+import { DotGrid } from "@/components/widgets/DotGrid"
 import { CalendarGithub, ProfileGithub, StatsGithub } from "./github"
 
 const Content = () => {
@@ -5,9 +6,11 @@ const Content = () => {
 		<div className="col-span-11">
 			<div className="grid grid-cols-6 gap-4">
 				<ProfileGithub />
-				<StatsGithub/>
+				<StatsGithub />
 				<CalendarGithub />
 			</div>
+
+			<DotGrid />
 		</div>
 	)
 }

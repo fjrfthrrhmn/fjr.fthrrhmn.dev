@@ -1,4 +1,8 @@
-import { IconType } from "react-icons"
+import { IconType } from "react-icons";
+
+
+
+
 
 export interface GlassIconProps {
 	name: string
@@ -6,7 +10,7 @@ export interface GlassIconProps {
 	background: string
 }
 
-const GlassIcon: React.FC<GlassIconProps> = ({
+export const GlassIcon = ({
 	name,
 	icon: Icon,
 	background
@@ -15,10 +19,10 @@ const GlassIcon: React.FC<GlassIconProps> = ({
 		<button
 			type="button"
 			aria-label={name}
-			className={`group relative h-[2.6em] w-[2.6em] bg-transparent outline-none [-webkit-tap-highlight-color:transparent] [perspective:24em] [transform-style:preserve-3d] md:h-[3em] md:w-[3em]`}
+			className={`group relative h-[2.6em] w-[2.6em] bg-transparent outline-none [-webkit-tap-highlight-color:transparent] [perspective:24em] [transform-style:preserve-3d] md:h-[3.5em] md:w-[3.5em]`}
 		>
 			<span
-				className={`absolute left-0 top-0 block h-full w-full origin-[100%_100%] rotate-[15deg] rounded-[1.25em] transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] group-hover:[transform:rotate(25deg)_translate3d(-0.5em,-0.5em,0.5em)] ${background}`}
+				className={`absolute left-0 top-0 block h-full w-full origin-[100%_100%] rotate-[15deg] rounded-[1.25em] transition-[opacity,transform] duration-300 ease-[cubic-bezier(0.83,0,0.17,1)] group-hover:[transform:rotate(25deg)_translate3d(-0.5em,-0.5em,0.5em)] ${background} `}
 			></span>
 
 			<span
@@ -31,7 +35,7 @@ const GlassIcon: React.FC<GlassIconProps> = ({
 					className="m-auto flex h-[1.5em] w-[1.5em] items-center justify-center"
 					aria-hidden="true"
 				>
-					<Icon size={24} />
+					<Icon size={28} />
 				</span>
 			</span>
 
@@ -41,5 +45,3 @@ const GlassIcon: React.FC<GlassIconProps> = ({
 		</button>
 	)
 }
-
-export default GlassIcon

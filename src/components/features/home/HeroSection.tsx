@@ -1,13 +1,16 @@
+import Image from "next/image"
+
 import { LucideArrowRight, LucideSend } from "lucide-react"
 
+import { BuiltWith } from "@/components/shared"
 import { Button, Container, Typography } from "@/components/ui"
 import { BoxReveal } from "@/components/widgets"
 
 const HeroSection = () => {
 	return (
 		<Container className="flex min-h-[800px] flex-col">
-			<div className="flex flex-1 items-center">
-				<div className="space-y-6 max-w-xl">
+			<div className="flex-1 grid grid-cols-3 items-center gap-6">
+				<div className="space-y-6 col-span-2">
 					<BoxReveal>
 						<Typography.Title variant="1/extrabold">
 							Hai there, I’m <br />{" "}
@@ -41,9 +44,22 @@ const HeroSection = () => {
 						</div>
 					</BoxReveal>
 				</div>
+
+				<div>
+					<Image
+						src={
+							"https://i.pinimg.com/736x/39/86/91/398691f123726a5763e9c47980964fff.jpg"
+						}
+						alt="Profile"
+						width={100}
+						height={100}
+						className="w-full h-80 rounded-xl object-cover bg-center border-8 border-zinc-50/10"
+						unoptimized
+					/>
+				</div>
 			</div>
 
-			{/* <BuiltWith /> */}
+			<BuiltWith />
 		</Container>
 	)
 }

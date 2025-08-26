@@ -4,6 +4,7 @@ import {
 	AboutSection,
 	DashboardSection,
 	HeroSection,
+	PhotosMarquee,
 	ProjectsSection
 } from "@/components/features/home"
 import CTA from "@/components/shared/CTA"
@@ -21,6 +22,7 @@ export default async function Home() {
 					/>
 				</div>
 				<HeroSection />
+				<PhotosMarquee />
 				<AboutSection />
 				<DashboardSection />
 				<ProjectsSection />

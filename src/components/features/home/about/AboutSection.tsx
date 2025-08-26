@@ -27,7 +27,7 @@ export const ABOUT_CARDS = [
 
 const AboutSection = () => {
 	return (
-		<Container padding="py-20" className="space-y-10">
+		<Container padding="py-32" className="space-y-10">
 			<div className="flex justify-between items-end">
 				<Title
 					text="Who am I?"

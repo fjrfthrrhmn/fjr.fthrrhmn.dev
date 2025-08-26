@@ -7,16 +7,26 @@ import { cn } from "@/lib/utils"
 type PaddingProps = "py-16" | "py-20" | "py-32" | "py-44"
 type ContainerProps = {
 	padding?: PaddingProps
+	container?: boolean
 } & React.ComponentProps<"div">
 
-const Container = ({ children, className, ref, ...props }: ContainerProps) => {
-	const classes = cn("container relative z-10 px-4 sm:px-14 lg:px-4", className, props.padding)
+export const Container = React.forwardRef<HTMLElement, ContainerProps>(
+	({ children, className, container = true, padding, ...props }, ref) => {
+		const classes = cn(
+			"relative z-10",
+			container
+				? "container px-4 sm:px-14 lg:px-4"
+				: "w-full mx-auto max-w-[1740px]",
+			className,
+			padding
+		)
 
-	return (
-		<main ref={ref} className={classes} {...props}>
-			{children}
-		</main>
-	)
-}
+		return (
+			<main ref={ref} className={classes} {...props}>
+				{children}
+			</main>
+		)
+	}
+)
 
-export { Container }
+Container.displayName = "Container"

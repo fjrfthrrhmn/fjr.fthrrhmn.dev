@@ -20,7 +20,7 @@ const ProjectsSection = () => {
 					description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."
 					variant="1/extrabold"
 				/>
-				<Typography.Text className="flex items-center gap-2 underline underline-offset-4 decoration-teal-400">
+				<Typography.Text className="flex items-center gap-2 underline underline-offset-8 decoration-teal-400">
 					<Link href={"#"}>View all projects</Link>
 					<ArrowRight />
 				</Typography.Text>
