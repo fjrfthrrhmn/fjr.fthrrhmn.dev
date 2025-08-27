@@ -1,9 +1,11 @@
+"use client"
+
 import dynamic from "next/dynamic"
 
 import { ProfileGithub, StatsGithub } from "./"
 
 const CalendarGithub = dynamic(() => import("./Calendar"), {
-	ssr: false,
+	ssr: false
 })
 
 const Github = ({ className }: { className?: string }) => {

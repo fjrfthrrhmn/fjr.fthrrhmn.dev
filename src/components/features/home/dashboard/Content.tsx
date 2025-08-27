@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react"
 import { ContentType, useSidebarStore } from "@/stores/sidebar-store"
 import { mapContentDashboard } from "@/lib/mappers"
 
-import { DotGrid } from "@/components/widgets/DotGrid"
+import { DotGrid } from "@/widgets"
 
 const Content = () => {
 	const isActive = useSidebarStore((state) => state.isActive) as ContentType

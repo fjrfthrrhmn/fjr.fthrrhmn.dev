@@ -2,20 +2,19 @@
 
 import { useGithubProfile } from "@/hooks"
 import { mapGithubStats } from "@/lib/mappers"
-import { calculateStreaks } from "@/lib/utils"
 
 import { CardCustom, Typography } from "@/components/ui"
-import { NumberTicker } from "@/components/widgets"
+import { NumberTicker } from "@/widgets"
 
 import { StreakCardGithub } from "."
+import { GithubUtils } from "../utils"
 
 const Stats = () => {
-	const { data } = useGithubProfile()
-	const contributions = data?.contributionsCollection
+	const { contributions } = useGithubProfile()
+	const contributionCalendar = contributions?.contributionCalendar.weeks ?? []
 
-	const { currentStreak, maxStreak } = calculateStreaks(
-		contributions?.contributionCalendar?.weeks ?? []
-	)
+	const { currentStreak, maxStreak } =
+		GithubUtils.calculateStreaks(contributionCalendar)
 
 	return (
 		<div className="col-span-4 grid grid-cols-3 gap-4 items-stretch">
@@ -24,7 +23,6 @@ const Stats = () => {
 					key={index}
 					className="p-4 flex flex-col items-center justify-center text-center gap-2"
 				>
-					
 					<Typography.Title variant="3/black">
 						<NumberTicker value={stat.value} />
 					</Typography.Title>

@@ -59,28 +59,3 @@ export const formatCurrency = (
 		maximumFractionDigits: config.maximumFractionDigits
 	}).format(amount)
 }
-
-export const calculateStreaks = (
-	weeks: { contributionDays: { date: string; contributionCount: number }[] }[]
-) => {
-	const days = weeks.flatMap((week) => week.contributionDays)
-	let maxStreak = 0
-	let currentStreak = 0
-	let tempStreak = 0
-
-	for (let i = 0; i < days.length; i++) {
-		if (days[i].contributionCount > 0) {
-			tempStreak++
-			if (tempStreak > maxStreak) maxStreak = tempStreak
-		} else {
-			tempStreak = 0
-		}
-	}
-
-		for (let i = days.length - 1; i >= 0; i--) {
-		if (days[i].contributionCount > 0) currentStreak++
-		else break
-	}
-
-	return { currentStreak, maxStreak }
-}

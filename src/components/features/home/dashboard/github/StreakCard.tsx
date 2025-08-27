@@ -34,21 +34,6 @@ const StreakCard = ({ maxStreak, streak }: StreakCardProps) => {
 						Max Streak
 					</Typography.Text>
 				</div>
-
-				{/* <div className="flex items-center gap-2">
-					<Typography.Title
-						variant="6/black"
-						className="font-mono text-background"
-					>
-						{maxStreak}
-					</Typography.Title>
-					<Typography.Text
-						variant="xs/medium"
-						className="text-foreground text-background"
-					>
-						Max Streak
-					</Typography.Text>
-				</div> */}
 			</div>
 
 			<div className="absolute -bottom-4 -right-9 z-10">
