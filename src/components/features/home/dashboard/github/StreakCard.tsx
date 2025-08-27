@@ -1,11 +1,8 @@
-"use client";
+"use client"
 
-import FireSvg from "@/components/icons/Fire";
-import { Typography } from "@/components/ui";
-
-
-
-
+import FireSvg from "@/components/icons/Fire"
+import { Typography } from "@/components/ui"
+import { NumberTicker } from "@/components/widgets"
 
 interface StreakCardProps {
 	streak: number
@@ -18,7 +15,7 @@ const getGradient = (streak: number) => {
 	return "from-zinc-700 via-zinc-800 to-zinc-900"
 }
 
-const StreakCard = ({ maxStreak }: StreakCardProps) => {
+const StreakCard = ({ maxStreak, streak }: StreakCardProps) => {
 	return (
 		<div
 			className={`relative overflow-hidden rounded-2xl border-2 p-4 bg-gradient-to-b ${getGradient(
@@ -31,7 +28,7 @@ const StreakCard = ({ maxStreak }: StreakCardProps) => {
 						variant="1/black"
 						className="font-mono drop-shadow-2xl"
 					>
-						{maxStreak}
+						<NumberTicker value={maxStreak} />
 					</Typography.Title>
 					<Typography.Text variant="sm/medium" className="text-foreground">
 						Max Streak

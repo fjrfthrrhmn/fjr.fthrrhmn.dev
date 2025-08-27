@@ -1,13 +1,31 @@
-import { SiCss3 as IconCss, SiHtml5 as IconHtml, SiJavascript as IconJavascript, SiLaravel as IconLaravel, SiMongodb as IconMongodb, SiMysql as IconMysql, SiNextdotjs as IconNextJs, SiNodedotjs as IconNodeJs, SiPhp as IconPhp, SiReact as IconReact, SiTailwindcss as IconTailwindCss, SiTypescript as IconTypescript, SiVercel as IconVercel } from "react-icons/si";
-import { TbBrandAstro as IconAstro, TbBrandFramerMotion as IconFramerMotion } from "react-icons/tb";
+import {
+	SiCss3 as IconCss,
+	SiJavascript as IconJavascript,
+	SiLaravel as IconLaravel,
+	SiMongodb as IconMongodb,
+	SiMysql as IconMysql,
+	SiNextdotjs as IconNextJs,
+	SiNodedotjs as IconNodeJs,
+	SiPhp as IconPhp,
+	SiReact as IconReact,
+	SiTailwindcss as IconTailwindCss,
+	SiTypescript as IconTypescript,
+	SiVercel as IconVercel,
+	SiGithub as IconGithub
+} from "react-icons/si"
+import {
+	TbBrandAstro as IconAstro,
+	TbBrandFramerMotion as IconFramerMotion
+} from "react-icons/tb"
 
+import { CodeIcon, ZapIcon } from "lucide-react"
 
-
-import { ExperienceProps, PhotoProps, SkillProps, StackBuiltProps } from "@/types";
-
-
-
-
+import {
+	ExperienceProps,
+	PhotoProps,
+	SkillProps,
+	StackBuiltProps
+} from "@/types"
 
 export const PhotosData: PhotoProps[] = [
 	{
@@ -106,76 +124,90 @@ export const ExperiencesData: ExperienceProps[] = [
 	}
 ]
 
-
 export const SkillsData: SkillProps[] = [
-  {
-    name: "CSS",
-    icon: IconCss,
-    background: "bg-blue-500 ", // CSS blue glass
-  },
-  {
-    name: "JavaScript",
-    icon: IconJavascript,
-    background: "bg-yellow-500 ", // JS yellow glass
-  },
-  {
-    name: "React",
-    icon: IconReact,
-    background: "bg-sky-500 ", // React cyan glass
-  },
-  {
-    name: "TypeScript",
-    icon: IconTypescript,
-    background: "bg-blue-600 ", // TS blue glass
-  },
-  {
-    name: "Tailwind CSS",
-    icon: IconTailwindCss,
-    background: "bg-cyan-400 ", // Tailwind cyan glass
-  },
-  {
-    name: "Next.js",
-    icon: IconNextJs,
-    background: "bg-black ", // Next glass
-  },
-  {
-    name: "Node.js",
-    icon: IconNodeJs,
-    background: "bg-green-600 ", // Node glass
-  },
-  {
-    name: "PHP",
-    icon: IconPhp,
-    background: "bg-indigo-500 ", // PHP indigo glass
-  },
-  {
-    name: "MySQL",
-    icon: IconMysql,
-    background: "bg-blue-700 ", // MySQL glass
-  },
-  {
-    name: "MongoDB",
-    icon: IconMongodb,
-    background: "bg-green-500 ", // Mongo glass
-  },
-  {
-    name: "Laravel",
-    icon: IconLaravel,
-    background: "bg-red-500 ", // Laravel glass
-  },
-  {
-    name: "Astro",
-    icon: IconAstro,
-    background: "bg-purple-600 ", // Astro glass
-  },
-  {
-    name: "Framer Motion",
-    icon: IconFramerMotion,
-    background: "bg-pink-500 ", // Framer glass
-  },
-  {
-    name: "Vercel",
-    icon: IconVercel,
-    background: "bg-black ", // Vercel glass
-  },
+	{
+		name: "CSS",
+		icon: IconCss,
+		background: "bg-blue-500 " // CSS blue glass
+	},
+	{
+		name: "JavaScript",
+		icon: IconJavascript,
+		background: "bg-yellow-500 " // JS yellow glass
+	},
+	{
+		name: "React",
+		icon: IconReact,
+		background: "bg-sky-500 " // React cyan glass
+	},
+	{
+		name: "TypeScript",
+		icon: IconTypescript,
+		background: "bg-blue-600 " // TS blue glass
+	},
+	{
+		name: "Tailwind CSS",
+		icon: IconTailwindCss,
+		background: "bg-cyan-400 " // Tailwind cyan glass
+	},
+	{
+		name: "Next.js",
+		icon: IconNextJs,
+		background: "bg-black " // Next glass
+	},
+	{
+		name: "Node.js",
+		icon: IconNodeJs,
+		background: "bg-green-600 " // Node glass
+	},
+	{
+		name: "PHP",
+		icon: IconPhp,
+		background: "bg-indigo-500 " // PHP indigo glass
+	},
+	{
+		name: "MySQL",
+		icon: IconMysql,
+		background: "bg-blue-700 " // MySQL glass
+	},
+	{
+		name: "MongoDB",
+		icon: IconMongodb,
+		background: "bg-green-500 " // Mongo glass
+	},
+	{
+		name: "Laravel",
+		icon: IconLaravel,
+		background: "bg-red-500 " // Laravel glass
+	},
+	{
+		name: "Astro",
+		icon: IconAstro,
+		background: "bg-purple-600 " // Astro glass
+	},
+	{
+		name: "Framer Motion",
+		icon: IconFramerMotion,
+		background: "bg-pink-500 " // Framer glass
+	},
+	{
+		name: "Vercel",
+		icon: IconVercel,
+		background: "bg-black " // Vercel glass
+	}
+]
+
+export const SidebarData = [
+	{
+		name: "Github",
+		icon: IconGithub
+	},
+	{
+		name: "MonkeyType",
+		icon: ZapIcon
+	},
+	{
+		name: "LeetCode",
+		icon: CodeIcon
+	}
 ]

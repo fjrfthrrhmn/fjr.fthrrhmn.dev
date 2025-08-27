@@ -1,15 +1,31 @@
+"use client"
+
+import { AnimatePresence, motion } from "motion/react"
+
+import { ContentType, useSidebarStore } from "@/stores/sidebar-store"
+import { mapContentDashboard } from "@/lib/mappers"
+
 import { DotGrid } from "@/components/widgets/DotGrid"
-import { CalendarGithub, ProfileGithub, StatsGithub } from "./github"
 
 const Content = () => {
+	const isActive = useSidebarStore((state) => state.isActive) as ContentType
+	const ActiveComponent = mapContentDashboard[isActive]
+
 	return (
 		<div className="col-span-11">
-			<div className="grid grid-cols-6 gap-4">
-				<ProfileGithub />
-				<StatsGithub />
-				<CalendarGithub />
-			</div>
-
+			<AnimatePresence mode="wait">
+				{ActiveComponent && (
+					<motion.div
+						key={isActive}
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: -20 }}
+						transition={{ duration: 0.3, ease: "linear" }}
+					>
+						<ActiveComponent />
+					</motion.div>
+				)}
+			</AnimatePresence>
 			<DotGrid />
 		</div>
 	)

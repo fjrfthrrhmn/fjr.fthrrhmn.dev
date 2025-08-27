@@ -77,8 +77,7 @@ export const calculateStreaks = (
 		}
 	}
 
-	// hitung current streak (hari terakhir)
-	for (let i = days.length - 1; i >= 0; i--) {
+		for (let i = days.length - 1; i >= 0; i--) {
 		if (days[i].contributionCount > 0) currentStreak++
 		else break
 	}
