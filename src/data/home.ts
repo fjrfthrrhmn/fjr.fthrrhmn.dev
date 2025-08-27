@@ -31,7 +31,7 @@ import {
 import { ContentType } from "@/stores/sidebar-store"
 
 import { Experiences, Profile, Skills } from "@/components/features/home/about"
-import { GithubContent } from "@/components/features/home/dashboard/github"
+import { GithubContent, MonkeyTypeContent } from "@/components/features/home/dashboard"
 
 export const PhotosData: PhotoProps[] = [
 	{
@@ -238,5 +238,6 @@ export const SidebarData = [
 
 export const DashboardData: Partial<Record<ContentType, React.ComponentType>> =
 	{
-		Github: GithubContent
+		Github: GithubContent,
+		MonkeyType: MonkeyTypeContent
 	}

@@ -8,7 +8,7 @@ import { useGithubProfile } from "@/hooks"
 import { Avatar, CardCustom, Typography } from "@/components/ui"
 
 const Profile = () => {
-	const { response } = useGithubProfile()
+	const { data } = useGithubProfile()
 
 	return (
 		<CardCustom className="col-span-2">
@@ -16,7 +16,7 @@ const Profile = () => {
 				<Avatar size="size-16">
 					<Image
 						src={
-							response?.avatarUrl ||
+							data?.avatarUrl ||
 							"https://i.pinimg.com/736x/de/a8/68/dea868a8d880e9913c4ebb7a558b475f.jpg"
 						}
 						alt="Profile"
@@ -29,7 +29,7 @@ const Profile = () => {
 				<div className="flex flex-col">
 					<div className="flex gap-2 items-center">
 						<Typography.Text variant="sm/semibold" className="text-foreground">
-							{response?.name}
+							{data?.name}
 						</Typography.Text>
 						<MdVerified className="text-blue-400" size={20} />
 					</div>
@@ -37,7 +37,7 @@ const Profile = () => {
 						variant="xs/normal"
 						className="underline underline-offset-4"
 					>
-						@{response?.login}
+						@{data?.login}
 					</Typography.Text>
 				</div>
 			</div>

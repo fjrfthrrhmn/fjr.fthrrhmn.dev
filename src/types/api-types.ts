@@ -3,7 +3,7 @@ import { AxiosRequestConfig, AxiosResponse } from "axios"
 export interface ApiResponse<T> {
 	data: T
 	status?: number
-	message?: string
+	message: string
 }
 
 export interface ApiError {

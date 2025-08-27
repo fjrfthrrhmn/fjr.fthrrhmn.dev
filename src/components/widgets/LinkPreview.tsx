@@ -1,19 +1,22 @@
-"use client"
+"use client";
 
-import React from "react"
-import Image from "next/image"
-import Link from "next/link"
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
-import {
-	AnimatePresence,
-	motion,
-	useMotionValue,
-	useSpring
-} from "motion/react"
-import { encode } from "qss"
 
-import { cn } from "@/lib/utils"
+
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
+import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
+import { encode } from "qss";
+
+
+
+import { cn } from "@/lib/utils";
+
+
+
+
 
 type LinkPreviewProps = {
 	children: React.ReactNode
@@ -138,7 +141,7 @@ export const LinkPreview = ({
 							>
 								<Link
 									href={url}
-									aria-label={`Go to ${name}`} // clear, human-friendly label
+									aria-label={`Read more about ${name}`}
 									className="block p-1 bg-white border-2 border-transparent shadow rounded-xl hover:border-zinc-200 dark:hover:border-zinc-800"
 								>
 									<Image
@@ -146,10 +149,9 @@ export const LinkPreview = ({
 										width={width}
 										height={height}
 										className="rounded-lg"
-										alt={name}
+										alt=""
 										quality={quality}
 									/>
-									<span className="sr-only">{name}</span>
 								</Link>
 							</motion.div>
 						)}
