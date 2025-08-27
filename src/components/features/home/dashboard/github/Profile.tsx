@@ -1,19 +1,11 @@
-"use client";
+"use client"
 
-import { MdVerified } from "react-icons/md";
-import Image from "next/image";
+import { MdVerified } from "react-icons/md"
+import Image from "next/image"
 
+import { useGithubProfile } from "@/hooks"
 
-
-import { useGithubProfile } from "@/hooks";
-
-
-
-import { Avatar, CardCustom, Typography } from "@/components/ui";
-
-
-
-
+import { Avatar, CardCustom, Typography } from "@/components/ui"
 
 const Profile = () => {
 	const { response } = useGithubProfile()
@@ -41,7 +33,10 @@ const Profile = () => {
 						</Typography.Text>
 						<MdVerified className="text-blue-400" size={20} />
 					</div>
-					<Typography.Text variant="xs/normal" className="font-mono">
+					<Typography.Text
+						variant="xs/normal"
+						className="underline underline-offset-4"
+					>
 						@{response?.login}
 					</Typography.Text>
 				</div>

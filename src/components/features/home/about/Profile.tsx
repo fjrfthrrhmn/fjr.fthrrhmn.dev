@@ -21,9 +21,7 @@ const Profile = () => {
 		<>
 			<Title text="Profile" />
 
-			<ScrollArea
-				className={cn(expanded ? "h-[600px]" : "h-[400px]", "mt-6")}
-			>
+			<ScrollArea className={cn(expanded ? "h-[600px]" : "h-[400px]", "mt-6")}>
 				<div className="flex flex-col gap-4">
 					{items.map((item, i) => (
 						<Typography.Text key={i}>{item}</Typography.Text>

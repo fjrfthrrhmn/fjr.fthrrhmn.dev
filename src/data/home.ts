@@ -236,8 +236,7 @@ export const SidebarData = [
 	}
 ]
 
-export const DashboardData: Partial<
-	Record<ContentType, React.ComponentType>
-> = {
-	Github: GithubContent
-}
+export const DashboardData: Partial<Record<ContentType, React.ComponentType>> =
+	{
+		Github: GithubContent
+	}

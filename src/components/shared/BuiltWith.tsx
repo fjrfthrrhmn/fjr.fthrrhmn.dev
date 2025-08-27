@@ -1,5 +1,6 @@
-import { StacksBuiltData } from "@/data/home";
-import { LinkPreview } from "@/widgets";
+import { LinkPreview } from "@/widgets"
+
+import { StacksBuiltData } from "@/data/home"
 
 const BuiltWith = () => {
 	return (
@@ -7,9 +8,9 @@ const BuiltWith = () => {
 			{StacksBuiltData.map((item, index) => (
 				<div
 					key={index}
-					className="group p-2.5 rounded-2xl border-4 flex items-center justify-center "
+					className="group p-2.5 rounded-2xl border-4 flex items-center justify-center"
 				>
-					<LinkPreview url={item.url}>
+					<LinkPreview url={item.url} name={item.name}>
 						<item.icon
 							size={28}
 							className={`opacity-30 ${item.classHover} transition duration-500 ease-in`}

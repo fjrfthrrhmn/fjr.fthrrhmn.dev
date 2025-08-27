@@ -1,13 +1,7 @@
-import type { NextConfig } from "next";
-import createNextIntlPlugin from "next-intl/plugin";
+import type { NextConfig } from "next"
+import createNextIntlPlugin from "next-intl/plugin"
 
-
-
-import { withSentryConfig } from "@sentry/nextjs";
-
-
-
-
+import { withSentryConfig } from "@sentry/nextjs"
 
 const nextConfig: NextConfig = {
 	webpack(config) {
@@ -20,7 +14,7 @@ const nextConfig: NextConfig = {
 		return config
 	},
 	images: {
-		domains: ["api.microlink.io"]
+		domains: ["api.microlink.io", "i.pinimg.com"]
 	}
 }
 

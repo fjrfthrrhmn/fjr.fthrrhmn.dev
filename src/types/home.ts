@@ -21,7 +21,7 @@ export type ExperienceProps = {
 
 export type AboutProps = {
 	name: string
-	component: React.ComponentType,
+	component: React.ComponentType
 	className: string
 }
 

@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import GitHubCalendar from "react-github-calendar"
 import dynamic from "next/dynamic"
 
 import { useGithubProfile } from "@/hooks"
@@ -9,7 +10,6 @@ import { CardCustom } from "@/components/ui"
 
 import { GithubConfig } from "../config"
 import { GithubUtils } from "../utils"
-import GitHubCalendar from "react-github-calendar"
 
 const Calendar = () => {
 	const { contributions, isLoading } = useGithubProfile()

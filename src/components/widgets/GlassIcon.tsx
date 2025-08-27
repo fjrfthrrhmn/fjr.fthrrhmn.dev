@@ -1,8 +1,4 @@
-import { IconType } from "react-icons";
-
-
-
-
+import { IconType } from "react-icons"
 
 export interface GlassIconProps {
 	name: string
@@ -10,11 +6,7 @@ export interface GlassIconProps {
 	background: string
 }
 
-export const GlassIcon = ({
-	name,
-	icon: Icon,
-	background
-}: GlassIconProps) => {
+export const GlassIcon = ({ name, icon: Icon, background }: GlassIconProps) => {
 	return (
 		<button
 			type="button"

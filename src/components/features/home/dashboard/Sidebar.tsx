@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import { useSidebarStore } from "@/stores/sidebar-store"
 
 import { CardCustom } from "@/components/ui"

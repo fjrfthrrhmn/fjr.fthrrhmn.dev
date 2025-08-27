@@ -1,25 +1,26 @@
-"use client";
+"use client"
 
-import { useRef, useState } from "react";
-import { IconType } from "react-icons";
-import Link from "next/link";
+import { useRef, useState } from "react"
+import { IconType } from "react-icons"
+import Link from "next/link"
 
+import { ListIcon, LucideIcon } from "lucide-react"
+import {
+	AnimatePresence,
+	motion,
+	MotionValue,
+	useMotionValue,
+	useSpring,
+	useTransform
+} from "motion/react"
 
+import { cn } from "@/lib/utils"
 
-import { ListIcon, LucideIcon } from "lucide-react";
-import { AnimatePresence, motion, MotionValue, useMotionValue, useSpring, useTransform } from "motion/react";
-
-
-
-import { cn } from "@/lib/utils";
-
-
-
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-
-
-
-
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger
+} from "@/components/ui/tooltip"
 
 /**
  * Note: Use position fixed according to your needs

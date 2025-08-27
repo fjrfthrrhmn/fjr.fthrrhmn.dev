@@ -1,17 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
+import { ArrowRight } from "lucide-react"
 
-
-import { ArrowRight } from "lucide-react";
-
-
-
-import { Button, CardCustom, Container, Title, Typography } from "@/components/ui";
-
-
-
-
+import {
+	Button,
+	CardCustom,
+	Container,
+	Title,
+	Typography
+} from "@/components/ui"
 
 const ProjectsSection = () => {
 	return (

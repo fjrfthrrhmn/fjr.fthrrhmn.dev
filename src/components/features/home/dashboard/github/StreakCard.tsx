@@ -18,7 +18,7 @@ const getGradient = (streak: number) => {
 const StreakCard = ({ maxStreak, streak }: StreakCardProps) => {
 	return (
 		<div
-			className={`relative overflow-hidden rounded-2xl border-2 p-4 bg-gradient-to-b ${getGradient(
+			className={`relative overflow-hidden rounded-2xl border-2 px-4 py-6 bg-gradient-to-b ${getGradient(
 				maxStreak
 			)}`}
 		>
@@ -26,7 +26,7 @@ const StreakCard = ({ maxStreak, streak }: StreakCardProps) => {
 				<div>
 					<Typography.Title
 						variant="1/black"
-						className="font-mono drop-shadow-2xl"
+						className="font-mono drop-shadow-2xl mb-1"
 					>
 						<NumberTicker value={maxStreak} />
 					</Typography.Title>

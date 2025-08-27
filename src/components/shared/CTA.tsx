@@ -1,8 +1,9 @@
-import { ArrowRight } from "lucide-react";
-import { Button, CardCustom, Container, Typography } from "../ui";
+import { ArrowRight } from "lucide-react"
+
+import { Button, CardCustom, Container, Typography } from "../ui"
 
 const CTA = () => {
-  return (
+	return (
 		<Container padding="py-20">
 			<CardCustom className="w-full h-max px-12 py-8">
 				<div className="grid grid-cols-3 items-center gap-x-10">
@@ -30,6 +31,6 @@ const CTA = () => {
 			</CardCustom>
 		</Container>
 	)
-};
+}
 
-export default CTA;
+export default CTA

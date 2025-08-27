@@ -23,7 +23,7 @@ const Stats = () => {
 					key={index}
 					className="p-4 flex flex-col items-center justify-center text-center gap-2"
 				>
-					<Typography.Title variant="3/black">
+					<Typography.Title variant="3/black" className="font-mono">
 						<NumberTicker value={stat.value} />
 					</Typography.Title>
 					<Typography.Text variant="xs/semibold" className="text-foreground">

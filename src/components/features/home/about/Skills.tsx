@@ -1,13 +1,7 @@
-import { Title } from "@/components/ui";
-import { GlassIcon } from "@/widgets";
+import { Title } from "@/components/ui"
+import { GlassIcon } from "@/widgets"
 
-
-
-import { SkillsData } from "@/data/home";
-
-
-
-
+import { SkillsData } from "@/data/home"
 
 const Skills = () => {
 	return (

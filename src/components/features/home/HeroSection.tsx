@@ -12,7 +12,7 @@ const HeroSection = () => {
 			<div className="flex-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
 				<div className="space-y-6 order-last lg:order-first lg:col-span-2">
 					<BoxReveal>
-						<Typography.Title variant="1/extrabold">
+						<Typography.Title variant="1/bold">
 							Hai there, I’m <br />{" "}
 							<span
 								className="text-transparent bg-clip-text 
@@ -46,14 +46,12 @@ const HeroSection = () => {
 				</div>
 
 				<Image
-					src={
-						"https://i.pinimg.com/736x/39/86/91/398691f123726a5763e9c47980964fff.jpg"
-					}
+					src="https://i.pinimg.com/736x/39/86/91/398691f123726a5763e9c47980964fff.jpg"
 					alt="Profile"
 					width={100}
 					height={100}
 					className="w-full h-full rounded-xl object-cover aspect-square sm:aspect-video bg-center border-8 border-zinc-50/10"
-					unoptimized
+					priority
 				/>
 			</div>
 

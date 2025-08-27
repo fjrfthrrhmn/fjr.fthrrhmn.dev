@@ -1,26 +1,14 @@
-import Image from "next/image";
+import Image from "next/image"
 
+import { ExperienceProps } from "@/types"
 
+import { useExpandStore } from "@/stores/expand-store"
+import { cn } from "@/lib/utils"
 
-import { ExperienceProps } from "@/types";
+import { Avatar, Title, Typography } from "@/components/ui"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 
-
-
-import { useExpandStore } from "@/stores/expand-store";
-import { cn } from "@/lib/utils";
-
-
-
-import { Avatar, Title, Typography } from "@/components/ui";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-
-
-
-import { ExperiencesData } from "@/data/home";
-
-
-
-
+import { ExperiencesData } from "@/data/home"
 
 const Experiences = () => {
 	const expanded = useExpandStore((state) => state.expanded)
@@ -77,7 +65,6 @@ const formatExperienceDate = (
 	startDate: { month: string; year: number },
 	endDate: { month: string; year: number } | "Present"
 ) => {
-
 	if (endDate === "Present") {
 		return (
 			<span>
@@ -91,8 +78,7 @@ const formatExperienceDate = (
 	return (
 		<span>
 			{startDate.month} - {endDate.month}
-			<br className="hidden sm:block" />{" "}
-			{endDate.year}
+			<br className="hidden sm:block" /> {endDate.year}
 		</span>
 	)
 }

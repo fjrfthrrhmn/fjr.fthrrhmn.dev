@@ -13,7 +13,6 @@ export const useGithubProfile = () => {
 		}
 	})
 
-
 	return {
 		response: data,
 		contributions: data?.contributionsCollection,
