@@ -3,7 +3,7 @@ import { LinkPreview } from "@/widgets";
 
 const BuiltWith = () => {
 	return (
-		<div className="flex flex-wrap items-center justify-center gap-2 w-full">
+		<div className="mt-20 lg:mt-40 flex flex-wrap items-center justify-center gap-2 w-full">
 			{StacksBuiltData.map((item, index) => (
 				<div
 					key={index}

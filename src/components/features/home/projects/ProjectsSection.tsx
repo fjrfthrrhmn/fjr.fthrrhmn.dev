@@ -14,7 +14,7 @@ import {
 const ProjectsSection = () => {
 	return (
 		<Container padding="py-20" className="space-y-10">
-			<div className="flex items-end justify-between w-full">
+			<div className="flex flex-col sm:justify-between sm:items-end">
 				<Title
 					text="Projects"
 					description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."

@@ -2,15 +2,15 @@ import Image from "next/image"
 
 import { LucideArrowRight, LucideSend } from "lucide-react"
 
-import { BuiltWith } from "@/components/shared"
-import { Button, Container, Typography } from "@/components/ui"
-import { BoxReveal } from "@/components/widgets"
+import { BuiltWith } from "@/shared"
+import { Button, Container, Typography } from "@/ui"
+import { BoxReveal } from "@/widgets"
 
 const HeroSection = () => {
 	return (
-		<Container className="flex min-h-[800px] flex-col">
-			<div className="flex-1 grid grid-cols-3 items-center gap-6">
-				<div className="space-y-6 col-span-2">
+		<Container className="pt-28">
+			<div className="flex-1 grid grid-cols-1 lg:grid-cols-3 items-center gap-6">
+				<div className="space-y-6 order-last lg:order-first lg:col-span-2">
 					<BoxReveal>
 						<Typography.Title variant="1/extrabold">
 							Hai there, I’m <br />{" "}
@@ -32,7 +32,7 @@ const HeroSection = () => {
 					</BoxReveal>
 
 					<BoxReveal>
-						<div className="w-full flex flex-col sm:flex-row justify-center gap-4">
+						<div className="w-full flex flex-col sm:flex-row sm:justify-center gap-4">
 							<Button>
 								<LucideSend strokeWidth={2.5} />
 								Lets Connect
@@ -45,18 +45,16 @@ const HeroSection = () => {
 					</BoxReveal>
 				</div>
 
-				<div>
-					<Image
-						src={
-							"https://i.pinimg.com/736x/39/86/91/398691f123726a5763e9c47980964fff.jpg"
-						}
-						alt="Profile"
-						width={100}
-						height={100}
-						className="w-full h-80 rounded-xl object-cover bg-center border-8 border-zinc-50/10"
-						unoptimized
-					/>
-				</div>
+				<Image
+					src={
+						"https://i.pinimg.com/736x/39/86/91/398691f123726a5763e9c47980964fff.jpg"
+					}
+					alt="Profile"
+					width={100}
+					height={100}
+					className="w-full h-full rounded-xl object-cover aspect-square sm:aspect-video bg-center border-8 border-zinc-50/10"
+					unoptimized
+				/>
 			</div>
 
 			<BuiltWith />
