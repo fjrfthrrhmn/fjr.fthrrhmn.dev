@@ -4,7 +4,7 @@ export const APP_CONFIG = {
 	API_TIMEOUT: 10000,
 	APP_NAME: "NextJS Boilerplate",
 	APP_VERSION: "1.0.0",
-	DEFAULT_LANGUAGE: "tr",
+	DEFAULT_LANGUAGE: "id",
 	DEFAULT_THEME: "light",
 	SITE_URL: process.env.NEXT_PUBLIC_APP_URL || "",
 	APP_DESCRIPTION:

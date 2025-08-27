@@ -1,10 +1,18 @@
-"use client"
+"use client";
 
-import { ComponentPropsWithoutRef, useEffect, useRef } from "react"
+import { ComponentPropsWithoutRef, useEffect, useRef } from "react";
 
-import { useInView, useMotionValue, useSpring } from "motion/react"
 
-import { cn } from "@/lib/utils"
+
+import { useInView, useMotionValue, useSpring } from "motion/react";
+
+
+
+import { cn } from "@/lib/utils";
+
+
+
+
 
 interface NumberTickerProps extends ComponentPropsWithoutRef<"span"> {
 	value: number
@@ -21,8 +29,9 @@ export function NumberTicker({
 	delay = 0,
 	className,
 	decimalPlaces = 0,
+	formatter, // 👈 tambahan
 	...props
-}: NumberTickerProps) {
+}: NumberTickerProps & { formatter?: (v: number) => string }) {
 	const ref = useRef<HTMLSpanElement>(null)
 	const motionValue = useMotionValue(direction === "down" ? value : startValue)
 	const springValue = useSpring(motionValue, {
@@ -44,13 +53,17 @@ export function NumberTicker({
 		() =>
 			springValue.on("change", (latest) => {
 				if (ref.current) {
-					ref.current.textContent = Intl.NumberFormat("en-US", {
-						minimumFractionDigits: decimalPlaces,
-						maximumFractionDigits: decimalPlaces
-					}).format(Number(latest.toFixed(decimalPlaces)))
+					const formatted = formatter
+						? formatter(latest) // 👈 kalau ada formatter, pake
+						: Intl.NumberFormat("en-US", {
+								minimumFractionDigits: decimalPlaces,
+								maximumFractionDigits: decimalPlaces
+							}).format(Number(latest.toFixed(decimalPlaces)))
+
+					ref.current.textContent = formatted
 				}
 			}),
-		[springValue, decimalPlaces]
+		[springValue, decimalPlaces, formatter]
 	)
 
 	return (

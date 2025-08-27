@@ -1,7 +1,7 @@
 "use client"
 
 import { useGithubProfile } from "@/hooks"
-import { mapGithubStats } from "@/lib/mappers"
+import { GithubMapStats } from "@/lib/mappers"
 
 import { CardCustom, Typography } from "@/components/ui"
 import { NumberTicker } from "@/widgets"
@@ -18,7 +18,7 @@ const Stats = () => {
 
 	return (
 		<div className="col-span-4 grid grid-cols-3 gap-4 items-stretch">
-			{mapGithubStats(contributions)?.map((stat, index) => (
+			{GithubMapStats(contributions)?.map((stat, index) => (
 				<CardCustom
 					key={index}
 					className="p-4 flex flex-col items-center justify-center text-center gap-2"

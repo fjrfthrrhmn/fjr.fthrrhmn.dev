@@ -1,6 +1,10 @@
+'use client'
 import { MonkeyUserType } from "@/types/monkey-types"
 
-import { CardCustom } from "@/components/ui"
+import { MonkeyMapStats } from "@/lib/mappers"
+
+import { CardCustom, Typography } from "@/components/ui"
+import { NumberTicker } from "@/components/widgets"
 
 type StatsProps = {
 	data: MonkeyUserType["typingStats"]
@@ -8,26 +12,17 @@ type StatsProps = {
 
 const Stats = ({ data }: StatsProps) => {
 	return (
-		<CardCustom className="col-span-4">
-			<div>
-				<div>Stats</div>
-			</div>
-			<div className="grid grid-cols-3 gap-4 text-center">
-				<div>
-					<p className="text-lg font-bold">{data.completedTests}</p>
-					<p className="text-sm text-muted-foreground">Completed Tests</p>
+		<CardCustom className="col-span-4 grid grid-cols-3 gap-4 text-center">
+			{MonkeyMapStats(data).map((item) => (
+				<div key={item.label}>
+					<Typography.Title variant="3/black" className="font-mono ">
+						<NumberTicker value={item.value} formatter={item.formatter} className="text-teal-400" />
+					</Typography.Title>
+					<Typography.Text variant="xs/normal" className="text-foreground mt-2">
+						{item.label}
+					</Typography.Text>
 				</div>
-				<div>
-					<p className="text-lg font-bold">{data.startedTests}</p>
-					<p className="text-sm text-muted-foreground">Started Tests</p>
-				</div>
-				<div>
-					<p className="text-lg font-bold">
-						{Math.floor(data.timeTyping / 3600)}h
-					</p>
-					<p className="text-sm text-muted-foreground">Time Typing</p>
-				</div>
-			</div>
+			))}
 		</CardCustom>
 	)
 }
