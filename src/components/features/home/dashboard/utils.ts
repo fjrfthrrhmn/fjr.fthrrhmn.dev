@@ -1,6 +1,7 @@
 import { Activity } from "react-github-calendar"
 
 import { ContributionCalendar } from "@/types"
+import { MonkeyUserType } from "@/types/monkey-types"
 
 // ==========================
 // GitHub Utils
@@ -54,4 +55,35 @@ export const transformContributions = (
 export const GithubUtils = {
 	calculateStreaks,
 	transformContributions
+}
+
+// ==========================
+// MonkeyType Utils
+// ==========================
+const bestStats = (personalBests: MonkeyUserType["personalBests"]) => {
+	let bestWPM = 0
+	let bestAccuracy = 0
+
+	Object.values(personalBests.time).forEach((category) => {
+		category.forEach((item) => {
+			if (item.wpm > bestWPM) bestWPM = item.wpm
+			if (item.acc > bestAccuracy) bestAccuracy = item.acc
+		})
+	})
+
+	Object.values(personalBests.words).forEach((category) => {
+		category.forEach((item) => {
+			if (item.wpm > bestWPM) bestWPM = item.wpm
+			if (item.acc > bestAccuracy) bestAccuracy = item.acc
+		})
+	})
+
+	return {
+		bestWPM: Math.round(bestWPM),
+		bestAccuracy: Math.round(bestAccuracy)
+	}
+}
+
+export const MonkeyTypeUtils = {
+	bestStats
 }

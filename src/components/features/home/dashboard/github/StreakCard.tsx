@@ -16,6 +16,7 @@ const getGradient = (streak: number) => {
 }
 
 const StreakCard = ({ maxStreak, streak }: StreakCardProps) => {
+	console.log('total streaks', streak)
 	return (
 		<div
 			className={`relative overflow-hidden rounded-2xl border-2 px-4 py-6 bg-gradient-to-b ${getGradient(

@@ -1,12 +1,18 @@
-import React from "react"
-import { IconType } from "react-icons"
+import { IconType } from "react-icons";
 
-import { GitCommit, GitFork } from "lucide-react"
 
-import { ContributionsType, GithubUserType } from "@/types"
-import { MonkeyUserType } from "@/types/monkey-types"
 
-import { formatSeconds } from "../utils"
+import { GitCommit, GitFork } from "lucide-react";
+
+
+
+import { GithubUserType } from "@/types";
+import { MonkeyUserType } from "@/types/monkey-types";
+
+
+
+import { formatSeconds } from "../utils";
+
 
 interface GithubStatItem {
 	value: number
@@ -32,16 +38,20 @@ export function GithubMapStats(
 }
 
 type MonkeyStatItem = MonkeyUserType["typingStats"]
+type BestStats = {
+	bestWPM: number
+	bestAccuracy: number
+}
 
-export function MonkeyMapStats(value: MonkeyStatItem) {
+export function MonkeyMapStats(value: MonkeyStatItem, bestStats: BestStats) {
 	return [
 		{
-			label: "Completed Tests",
-			value: value.completedTests
+			label: "Best WPM",
+			value: bestStats.bestWPM
 		},
 		{
-			label: "Started Tests",
-			value: value.startedTests
+			label: "Best Accuracy",
+			value: bestStats.bestAccuracy
 		},
 		{
 			label: "Time Typing",
