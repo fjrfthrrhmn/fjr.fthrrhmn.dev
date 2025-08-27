@@ -6,5 +6,5 @@ export const API_ENDPOINTS = {
 }
 
 export const API_KEYS = {
-	github: process.env.NEXT_PUBLIC_GITHUB_TOKEN,
+	github: process.env.NEXT_PUBLIC_GITHUB_TOKEN
 }

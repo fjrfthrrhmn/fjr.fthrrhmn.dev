@@ -31,7 +31,10 @@ import {
 import { ContentType } from "@/stores/sidebar-store"
 
 import { Experiences, Profile, Skills } from "@/components/features/home/about"
-import { GithubContent, MonkeyTypeContent } from "@/components/features/home/dashboard"
+import {
+	GithubContent,
+	MonkeyTypeContent
+} from "@/components/features/home/dashboard"
 
 export const PhotosData: PhotoProps[] = [
 	{

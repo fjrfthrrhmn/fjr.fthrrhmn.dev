@@ -1,4 +1,5 @@
-'use client'
+"use client"
+
 import { MonkeyUserType } from "@/types/monkey-types"
 
 import { MonkeyMapStats } from "@/lib/mappers"
@@ -16,7 +17,11 @@ const Stats = ({ data }: StatsProps) => {
 			{MonkeyMapStats(data).map((item) => (
 				<div key={item.label}>
 					<Typography.Title variant="3/black" className="font-mono ">
-						<NumberTicker value={item.value} formatter={item.formatter} className="text-teal-400" />
+						<NumberTicker
+							value={item.value}
+							formatter={item.formatter}
+							className="text-teal-400"
+						/>
 					</Typography.Title>
 					<Typography.Text variant="xs/normal" className="text-foreground mt-2">
 						{item.label}

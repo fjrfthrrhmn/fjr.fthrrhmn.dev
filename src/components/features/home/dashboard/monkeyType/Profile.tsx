@@ -37,7 +37,9 @@ const Profile = ({ data }: ProfileProps) => {
 					/>
 				</Avatar>
 				<div>
-					<Typography.Title variant="6/normal" className="capitalize">{data.name}</Typography.Title>
+					<Typography.Title variant="6/normal" className="capitalize">
+						{data.name}
+					</Typography.Title>
 					<Typography.Text
 						variant="xs/normal"
 						title={`Joined ${formatDate(new Date(data.addedAt), "d MMM yyyy", "id")}`}

@@ -46,7 +46,7 @@ export function MonkeyMapStats(value: MonkeyStatItem) {
 		{
 			label: "Time Typing",
 			value: value.timeTyping,
-			formatter: formatSeconds, 
+			formatter: formatSeconds
 		}
 	]
 }

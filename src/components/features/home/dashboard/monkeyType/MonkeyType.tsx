@@ -1,11 +1,8 @@
-"use client";
+"use client"
 
-import { useMonkeyTypeProfile } from "@/hooks/useMonkeyType";
+import { useMonkeyTypeProfile } from "@/hooks/useMonkeyType"
 
-
-
-import { PersonalBestsMonkeyType, ProfileMonkeyType, StatsMonkeyType } from ".";
-
+import { PersonalBestsMonkeyType, ProfileMonkeyType, StatsMonkeyType } from "."
 
 const MonkeyType = () => {
 	const { data } = useMonkeyTypeProfile()

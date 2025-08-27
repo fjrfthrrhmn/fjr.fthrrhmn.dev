@@ -1,22 +1,19 @@
-"use client";
+"use client"
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react"
+import Image from "next/image"
+import Link from "next/link"
 
+import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
+import {
+	AnimatePresence,
+	motion,
+	useMotionValue,
+	useSpring
+} from "motion/react"
+import { encode } from "qss"
 
-
-import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
-import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
-import { encode } from "qss";
-
-
-
-import { cn } from "@/lib/utils";
-
-
-
-
+import { cn } from "@/lib/utils"
 
 type LinkPreviewProps = {
 	children: React.ReactNode
