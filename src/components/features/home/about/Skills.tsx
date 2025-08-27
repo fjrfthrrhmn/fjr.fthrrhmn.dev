@@ -17,7 +17,7 @@ const Skills = () => {
 				description="I have experience in various programming languages and frameworks."
 			/>
 
-			<div className="relative z-10 flex justify-start gap-x-8 gap-y-10 flex-wrap mt-6 mb-6">
+			<div className="my-10 relative z-10 flex flex-wrap justify-center gap-4 sm:gap-y-10 lg:gap-x-8 lg:gap-y-12 ">
 				{SkillsData.map((item, index) => {
 					return (
 						<GlassIcon

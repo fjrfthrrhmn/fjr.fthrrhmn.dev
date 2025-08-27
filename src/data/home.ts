@@ -1,5 +1,6 @@
 import {
 	SiCss3 as IconCss,
+	SiGithub as IconGithub,
 	SiJavascript as IconJavascript,
 	SiLaravel as IconLaravel,
 	SiMongodb as IconMongodb,
@@ -10,8 +11,7 @@ import {
 	SiReact as IconReact,
 	SiTailwindcss as IconTailwindCss,
 	SiTypescript as IconTypescript,
-	SiVercel as IconVercel,
-	SiGithub as IconGithub
+	SiVercel as IconVercel
 } from "react-icons/si"
 import {
 	TbBrandAstro as IconAstro,
@@ -21,11 +21,17 @@ import {
 import { CodeIcon, ZapIcon } from "lucide-react"
 
 import {
+	AboutProps,
 	ExperienceProps,
 	PhotoProps,
 	SkillProps,
 	StackBuiltProps
 } from "@/types"
+
+import { ContentType } from "@/stores/sidebar-store"
+
+import { Experiences, Profile, Skills } from "@/components/features/home/about"
+import { GithubContent } from "@/components/features/home/dashboard/github"
 
 export const PhotosData: PhotoProps[] = [
 	{
@@ -124,6 +130,24 @@ export const ExperiencesData: ExperienceProps[] = [
 	}
 ]
 
+export const AboutData: AboutProps[] = [
+	{
+		name: "profile",
+		className: "lg:col-span-4",
+		component: Profile
+	},
+	{
+		name: "experiences",
+		className: "lg:col-span-3",
+		component: Experiences
+	},
+	{
+		name: "skills",
+		className: "lg:col-span-7",
+		component: Skills
+	}
+]
+
 export const SkillsData: SkillProps[] = [
 	{
 		name: "CSS",
@@ -211,3 +235,9 @@ export const SidebarData = [
 		icon: CodeIcon
 	}
 ]
+
+export const DashboardData: Partial<
+	Record<ContentType, React.ComponentType>
+> = {
+	Github: GithubContent
+}

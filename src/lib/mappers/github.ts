@@ -5,10 +5,6 @@ import { GitCommit, GitFork } from "lucide-react"
 
 import { ContributionsType } from "@/types"
 
-import { ContentType } from "@/stores/sidebar-store"
-
-import { GithubContent } from "@/components/features/home/dashboard/github"
-
 interface StatItem {
 	value: number
 	label: string
@@ -28,10 +24,4 @@ export function mapGithubStats(contributions?: ContributionsType): StatItem[] {
 			icon: GitFork
 		}
 	]
-}
-
-export const mapContentDashboard: Partial<
-	Record<ContentType, React.ComponentType>
-> = {
-	Github: GithubContent
 }

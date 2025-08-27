@@ -3,13 +3,14 @@
 import { AnimatePresence, motion } from "motion/react"
 
 import { ContentType, useSidebarStore } from "@/stores/sidebar-store"
-import { mapContentDashboard } from "@/lib/mappers"
 
 import { DotGrid } from "@/widgets"
 
+import { DashboardData } from "@/data/home"
+
 const Content = () => {
 	const isActive = useSidebarStore((state) => state.isActive) as ContentType
-	const ActiveComponent = mapContentDashboard[isActive]
+	const ActiveComponent = DashboardData[isActive]
 
 	return (
 		<div className="col-span-11">

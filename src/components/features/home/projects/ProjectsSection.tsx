@@ -1,30 +1,31 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import { ArrowRight } from "lucide-react"
 
-import {
-	Button,
-	CardCustom,
-	Container,
-	Title,
-	Typography
-} from "@/components/ui"
+
+import { ArrowRight } from "lucide-react";
+
+
+
+import { Button, CardCustom, Container, Title, Typography } from "@/components/ui";
+
+
+
+
 
 const ProjectsSection = () => {
 	return (
 		<Container padding="py-20" className="space-y-10">
-			<div className="flex flex-col sm:justify-between sm:items-end">
-				<Title
-					text="Projects"
-					description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."
-					variant="1/extrabold"
-				/>
-				<Typography.Text className="flex items-center gap-2 underline underline-offset-8 decoration-teal-400">
+			<Title
+				text="Projects"
+				description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."
+				variant="1/extrabold"
+			>
+				<Typography.Text className="flex items-center justify-end gap-2 underline underline-offset-8 decoration-teal-400">
 					<Link href={"#"}>View all projects</Link>
 					<ArrowRight />
 				</Typography.Text>
-			</div>
+			</Title>
 
 			<div className="grid grid-cols-2 gap-6">
 				{[...Array(4)].map((item, index) => {

@@ -1,8 +1,5 @@
-import { IconType } from "react-icons";
-
-
-
-
+import React from "react"
+import { IconType } from "react-icons"
 
 export type StackBuiltProps = {
 	name: string
@@ -20,6 +17,12 @@ export type ExperienceProps = {
 	logo: string
 	startDate: { month: string; year: number }
 	endDate: { month: string; year: number } | "Present"
+}
+
+export type AboutProps = {
+	name: string
+	component: React.ComponentType,
+	className: string
 }
 
 export type SkillProps = {
