@@ -33,6 +33,7 @@ const Sidebar = () => {
 						title={item.name}
 						onClick={() => setActive(item.name)}
 						aria-label={`toggle-sidebar-${item.name}`}
+						disabled={item.disabled}
 					>
 						<span className="sr-only">{item.name}</span>
 						<item.icon size={24} className={classes} />

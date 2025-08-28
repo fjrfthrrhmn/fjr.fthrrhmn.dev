@@ -1,17 +1,21 @@
-import { ArrowUp } from "lucide-react"
+import { ArrowUp } from "lucide-react";
 
-import { MonkeyUserType } from "@/types/monkey-types"
 
-import { formatDate } from "@/lib/utils"
 
-import {
-	CardCustom,
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-	Typography
-} from "@/ui"
-import { NumberTicker } from "@/widgets"
+import { MonkeyUserType, PersonalBestItemType } from "@/types/monkey-types";
+
+
+
+import { formatDate } from "@/lib/utils";
+
+
+
+import { CardCustom, Tooltip, TooltipContent, TooltipTrigger, Typography } from "@/ui";
+import { NumberTicker } from "@/widgets";
+
+
+
+
 
 type PersonalBestsProps = {
 	data: MonkeyUserType["personalBests"]
@@ -53,22 +57,22 @@ const PersonalBests = ({ data }: PersonalBestsProps) => {
 
 export default PersonalBests
 
-const BestPersonalItem = ({
-	field,
-	mode,
-	record
-}: {
+interface BestPersonalItemProps {
 	field: BestField
 	mode: string
-	record: { wpm: number; timestamp: number }
-}) => {
+	record: PersonalBestItemType
+}
+
+const BestPersonalItem = ({ field, mode, record }: BestPersonalItemProps) => {
 	const label = field === "time" ? `${mode} seconds` : `${mode} words`
 
 	return (
 		<Tooltip>
 			<TooltipTrigger asChild>
 				<div>
-					<Typography.Text variant="xs/normal" className="text-foreground">{label}</Typography.Text>
+					<Typography.Text variant="xs/normal" className="text-foreground">
+						{label}
+					</Typography.Text>
 					<Typography.Title variant="2/black">
 						<NumberTicker
 							value={record.wpm}
@@ -78,8 +82,20 @@ const BestPersonalItem = ({
 					<small>{formatDate(new Date(record.timestamp), "d MMM yyyy")}</small>
 				</div>
 			</TooltipTrigger>
-			<TooltipContent>
-				<p>Add to library</p>
+			<TooltipContent className="grid grid-cols-2 gap-x-4">
+				{[
+					{ label: "Wpm", value: record.wpm },
+					{ label: "Raw", value: record.raw },
+					{ label: "Con", value: record.consistency },
+					{ label: "Acc", value: record.acc }
+				].map(({ label, value }) => (
+					<div key={label} className="w-20 flex items-center justify-between">
+						<Typography.Text className="text-background" variant="xs/normal">
+							{label}:
+						</Typography.Text>
+						<Typography.Text className="text-background" variant="xs/normal">{value.toFixed(0)}</Typography.Text>
+					</div>
+				))}
 			</TooltipContent>
 		</Tooltip>
 	)

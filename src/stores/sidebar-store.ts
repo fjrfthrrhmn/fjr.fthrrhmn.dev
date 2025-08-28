@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-export type ContentType = "Github" | "LeetCode" | "MonkeyType"
+export type ContentType = "Github" | "WakaTime" | "MonkeyType"
 
 interface SidebarState {
 	isActive: string
