@@ -16,13 +16,7 @@ const Content = () => {
 		<div className="col-span-11">
 			<AnimatePresence mode="wait">
 				{ActiveComponent && (
-					<motion.div
-						key={isActive}
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						exit={{ opacity: 0, y: -20 }}
-						transition={{ duration: 0.3, ease: "linear" }}
-					>
+					<motion.div key={isActive}>
 						<ActiveComponent />
 					</motion.div>
 				)}

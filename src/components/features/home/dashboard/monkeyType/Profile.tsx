@@ -56,7 +56,7 @@ const Profile = ({ data }: ProfileProps) => {
 					<Typography.Title variant="6/normal" className="capitalize">
 						{data.name}
 					</Typography.Title>
-					<small className="text-paragraph">
+					<small>
 						Joined {formatDate(new Date(data.addedAt), "d MMM yyyy", "id")}
 					</small>
 

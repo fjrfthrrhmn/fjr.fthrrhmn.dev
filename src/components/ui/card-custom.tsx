@@ -1,24 +1,69 @@
-import React from "react"
+import React from "react";
+import { IconType } from "react-icons";
 
-import { cn } from "@/lib/utils"
 
-import { DotPattern } from "../widgets"
+
+import { cn } from "@/lib/utils";
+
+
+
+import { DotPattern } from "../widgets";
+
+
+type IconPlacement = "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
 
 type CardCustomProps = {
-	color?: string
-} & React.ComponentProps<"div">
+	children: React.ReactNode
+	className?: string
+	classNameIcon?: string
+	classNameContent?: string
+	icon?: IconType
+	iconSize?: number
+	iconPlacement?: IconPlacement
+}
 
 const CardCustom = React.forwardRef<HTMLDivElement, CardCustomProps>(
-	({ children, className, color, ...props }, ref) => {
-		const classes = cn(
+	(
+		{
+			children,
+			className,
+			classNameContent,
+			classNameIcon,
+			icon: Icon,
+			iconSize = 150,
+			iconPlacement = "bottomRight",
+			...props
+		},
+	) => {
+		const containerClasses = cn(
 			"relative overflow-hidden p-6 rounded-2xl border-2 bg-zinc-800",
 			className
 		)
 
-		return (
-			<div ref={ref} className={classes} {...props}>
-				{children}
+		const iconClasses = cn(
+			"absolute w-max h-max z-10 opacity-5",
+			{
+				topLeft: "-top-2 -left-4",
+				topRight: "-top-2 -right-4",
+				bottomLeft: "-bottom-2 -left-4",
+				bottomRight: "-bottom-2 -right-4"
+			}[iconPlacement],
+			classNameIcon
+		)
 
+		return (
+			<div className={containerClasses} {...props}>
+				{/* Content */}
+				<div className={cn("relative z-20", classNameContent)}>{children}</div>
+
+				{/* Decorative Icon */}
+				{Icon && (
+					<div className={iconClasses}>
+						<Icon size={iconSize} strokeWidth={2} />
+					</div>
+				)}
+
+				{/* Background pattern */}
 				<DotPattern
 					className={cn(
 						"[-webkit-mask-image:radial-gradient(ellipse_at_bottom_right,white_10%,transparent_90%)]",

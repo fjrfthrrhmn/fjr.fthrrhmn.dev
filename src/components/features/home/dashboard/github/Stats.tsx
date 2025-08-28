@@ -1,13 +1,22 @@
-"use client"
+"use client";
 
-import { useGithubProfile } from "@/hooks"
-import { GithubMapStats } from "@/lib/mappers"
+import { SiGithub } from "react-icons/si";
 
-import { CardCustom, Typography } from "@/components/ui"
-import { NumberTicker } from "@/widgets"
 
-import { StreakCardGithub } from "."
-import { GithubUtils } from "../utils"
+
+import { useGithubProfile } from "@/hooks";
+import { GithubMapStats } from "@/lib/mappers";
+
+
+
+import { CardCustom, Typography } from "@/components/ui";
+import { NumberTicker } from "@/widgets";
+
+
+
+import { StreakCardGithub } from ".";
+import { GithubUtils } from "../utils";
+
 
 const Stats = () => {
 	const { contributions } = useGithubProfile()
@@ -21,14 +30,19 @@ const Stats = () => {
 			{GithubMapStats(contributions)?.map((stat, index) => (
 				<CardCustom
 					key={index}
-					className="p-4 flex flex-col items-center justify-center text-center gap-2"
+					icon={stat.icon}
+					iconPlacement="bottomRight"
+					classNameIcon="rotate-12"
+					iconSize={150}
 				>
-					<Typography.Title variant="3/black" className="font-mono">
-						<NumberTicker value={stat.value} />
-					</Typography.Title>
-					<Typography.Text variant="xs/semibold" className="text-foreground">
-						{stat.label}
-					</Typography.Text>
+					<div className=" relative z-20 flex p-4 flex-col items-center justify-center text-center gap-2">
+						<Typography.Title variant="3/black" className="font-mono">
+							<NumberTicker value={stat.value} />
+						</Typography.Title>
+						<Typography.Text variant="xs/semibold" className="text-foreground">
+							{stat.label}
+						</Typography.Text>
+					</div>
 				</CardCustom>
 			))}
 

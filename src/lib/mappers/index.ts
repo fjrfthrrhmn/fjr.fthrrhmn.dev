@@ -1,6 +1,6 @@
 import { IconType } from "react-icons"
 
-import { GitCommit, GitFork } from "lucide-react"
+import { Clock, FolderGit2, GitFork, Target, Zap } from "lucide-react"
 
 import { GithubUserType } from "@/types"
 
@@ -19,12 +19,12 @@ export function GithubMapStats(
 		{
 			value: contributions?.totalCommitContributions ?? 0,
 			label: "Total Contributions",
-			icon: GitCommit
+			icon: GitFork
 		},
 		{
 			value: contributions?.totalRepositoryContributions ?? 0,
 			label: "Repository Contributions",
-			icon: GitFork
+			icon: FolderGit2
 		}
 	] as { value: number; label: string; icon: IconType }[]
 }
@@ -43,20 +43,24 @@ export function MonkeyMapStats({
 	return [
 		{
 			label: "Best WPM",
-			value: bestWPM ?? 0
+			value: bestWPM ?? 0,
+			icon: Zap
 		},
 		{
 			label: "Best Accuracy",
-			value: bestAccuracy ?? 0
+			value: bestAccuracy ?? 0,
+			icon: Target
 		},
 		{
 			label: "Time Typing",
 			value: timeTyping ?? 0,
-			formatter: MonkeyTypeUtils.formatTimeTyping
+			formatter: MonkeyTypeUtils.formatTimeTyping,
+			icon: Clock
 		}
 	] as {
 		label: string
 		value: number
+		icon: IconType
 		formatter?: (v: number) => string
 	}[]
 }

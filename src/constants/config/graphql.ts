@@ -5,6 +5,7 @@ export const GET_PROFILE_GITHUB = `
       name
       avatarUrl
       bio
+      url
       followers { totalCount }
       following { totalCount }
       contributionsCollection {

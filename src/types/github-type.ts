@@ -9,6 +9,7 @@ export interface GithubUserType {
 	name: string
 	avatarUrl: string
 	bio: string
+	url: string
 	followers: {
 		totalCount: number
 	}

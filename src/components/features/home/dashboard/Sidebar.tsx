@@ -1,17 +1,28 @@
-"use client"
+"use client";
 
-import { useSidebarStore } from "@/stores/sidebar-store"
+import { useSidebarStore } from "@/stores/sidebar-store";
 
-import { CardCustom } from "@/components/ui"
 
-import { SidebarData } from "@/data/home"
+
+import { CardCustom } from "@/components/ui";
+
+
+
+import { SidebarData } from "@/data/home";
+
+
+
+
 
 const Sidebar = () => {
 	const isActive = useSidebarStore((state) => state.isActive)
 	const setActive = useSidebarStore((state) => state.setActive)
 
 	return (
-		<CardCustom className="col-span-1 flex flex-col gap-6 items-center justify-start px-4 py-6 w-full h-max">
+		<CardCustom
+			className="col-span-1 px-4 py-6 w-full h-max"
+			classNameContent=" flex flex-col gap-6 items-center justify-start"
+		>
 			{SidebarData.map((item) => {
 				const isCurrent = isActive === item.name
 				const classes = isCurrent ? "" : "text-zinc-600"
