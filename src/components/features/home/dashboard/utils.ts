@@ -60,30 +60,41 @@ export const GithubUtils = {
 // ==========================
 // MonkeyType Utils
 // ==========================
-const bestStats = (personalBests: MonkeyUserType["personalBests"]) => {
+const bestStats = (
+	personalBests: MonkeyUserType["personalBests"],
+	timeTyping: MonkeyUserType["typingStats"]["timeTyping"]
+) => {
 	let bestWPM = 0
 	let bestAccuracy = 0
 
-	Object.values(personalBests.time).forEach((category) => {
-		category.forEach((item) => {
-			if (item.wpm > bestWPM) bestWPM = item.wpm
-			if (item.acc > bestAccuracy) bestAccuracy = item.acc
-		})
-	})
+	const categories = [personalBests.time, personalBests.words]
 
-	Object.values(personalBests.words).forEach((category) => {
-		category.forEach((item) => {
-			if (item.wpm > bestWPM) bestWPM = item.wpm
-			if (item.acc > bestAccuracy) bestAccuracy = item.acc
+	categories.forEach((group) => {
+		Object.values(group).forEach((items) => {
+			items.forEach(({ wpm, acc }) => {
+				if (wpm > bestWPM) bestWPM = wpm
+				if (acc > bestAccuracy) bestAccuracy = acc
+			})
 		})
 	})
 
 	return {
 		bestWPM: Math.round(bestWPM),
-		bestAccuracy: Math.round(bestAccuracy)
+		bestAccuracy: Math.round(bestAccuracy),
+		timeTyping
 	}
 }
 
+export const formatTimeTyping = (seconds: number) => {
+	const totalSeconds = Math.floor(seconds)
+	const h = Math.floor(totalSeconds / 3600)
+	const m = Math.floor((totalSeconds % 3600) / 60)
+	const s = totalSeconds % 60
+
+	return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
+}
+
 export const MonkeyTypeUtils = {
-	bestStats
+	bestStats,
+	formatTimeTyping
 }

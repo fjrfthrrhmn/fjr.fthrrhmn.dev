@@ -12,7 +12,10 @@ const MonkeyType = () => {
 	return (
 		<div className="grid grid-cols-6 gap-4">
 			<ProfileMonkeyType data={data} />
-			<StatsMonkeyType data={data.typingStats} />
+			<StatsMonkeyType
+				dataBest={data.personalBests}
+				dataTime={data.typingStats.timeTyping}
+			/>
 			<PersonalBestsMonkeyType data={data.personalBests} />
 		</div>
 	)

@@ -21,7 +21,7 @@ export function NumberTicker({
 	delay = 0,
 	className,
 	decimalPlaces = 0,
-	formatter, // 👈 tambahan
+	formatter, 
 	...props
 }: NumberTickerProps & { formatter?: (v: number) => string }) {
 	const ref = useRef<HTMLSpanElement>(null)
@@ -46,7 +46,7 @@ export function NumberTicker({
 			springValue.on("change", (latest) => {
 				if (ref.current) {
 					const formatted = formatter
-						? formatter(latest) // 👈 kalau ada formatter, pake
+						? formatter(latest)
 						: Intl.NumberFormat("en-US", {
 								minimumFractionDigits: decimalPlaces,
 								maximumFractionDigits: decimalPlaces

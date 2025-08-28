@@ -1,18 +1,10 @@
-import { IconType } from "react-icons";
+import { IconType } from "react-icons"
 
+import { GitCommit, GitFork } from "lucide-react"
 
+import { GithubUserType } from "@/types"
 
-import { GitCommit, GitFork } from "lucide-react";
-
-
-
-import { GithubUserType } from "@/types";
-import { MonkeyUserType } from "@/types/monkey-types";
-
-
-
-import { formatSeconds } from "../utils";
-
+import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils"
 
 interface GithubStatItem {
 	value: number
@@ -34,29 +26,37 @@ export function GithubMapStats(
 			label: "Repository Contributions",
 			icon: GitFork
 		}
-	]
+	] as { value: number; label: string; icon: IconType }[]
 }
 
-type MonkeyStatItem = MonkeyUserType["typingStats"]
 type BestStats = {
 	bestWPM: number
 	bestAccuracy: number
+	timeTyping: number
 }
 
-export function MonkeyMapStats(value: MonkeyStatItem, bestStats: BestStats) {
+export function MonkeyMapStats({
+	bestWPM,
+	bestAccuracy,
+	timeTyping
+}: BestStats) {
 	return [
 		{
 			label: "Best WPM",
-			value: bestStats.bestWPM
+			value: bestWPM ?? 0
 		},
 		{
 			label: "Best Accuracy",
-			value: bestStats.bestAccuracy
+			value: bestAccuracy ?? 0
 		},
 		{
 			label: "Time Typing",
-			value: value.timeTyping,
-			formatter: formatSeconds
+			value: timeTyping ?? 0,
+			formatter: MonkeyTypeUtils.formatTimeTyping
 		}
-	]
+	] as {
+		label: string
+		value: number
+		formatter?: (v: number) => string
+	}[]
 }
