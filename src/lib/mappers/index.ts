@@ -64,3 +64,7 @@ export function MonkeyMapStats({
 		formatter?: (v: number) => string
 	}[]
 }
+
+export function WakaTimeMapSats() {
+	return []
+}

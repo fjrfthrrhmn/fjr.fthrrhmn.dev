@@ -1,27 +1,42 @@
-import { IconType } from "react-icons";
-import { SiCss3 as IconCss, SiGithub as IconGithub, SiJavascript as IconJavascript, SiLaravel as IconLaravel, SiMongodb as IconMongodb, SiMysql as IconMysql, SiNextdotjs as IconNextJs, SiNodedotjs as IconNodeJs, SiPhp as IconPhp, SiReact as IconReact, SiTailwindcss as IconTailwindCss, SiTypescript as IconTypescript, SiVercel as IconVercel } from "react-icons/si";
-import { TbBrandAstro as IconAstro, TbBrandFramerMotion as IconFramerMotion } from "react-icons/tb";
+import { IconType } from "react-icons"
+import {
+	SiCss3 as IconCss,
+	SiGithub as IconGithub,
+	SiJavascript as IconJavascript,
+	SiLaravel as IconLaravel,
+	SiMongodb as IconMongodb,
+	SiMysql as IconMysql,
+	SiNextdotjs as IconNextJs,
+	SiNodedotjs as IconNodeJs,
+	SiPhp as IconPhp,
+	SiReact as IconReact,
+	SiTailwindcss as IconTailwindCss,
+	SiTypescript as IconTypescript,
+	SiVercel as IconVercel
+} from "react-icons/si"
+import {
+	TbBrandAstro as IconAstro,
+	TbBrandFramerMotion as IconFramerMotion
+} from "react-icons/tb"
 
+import { Activity, ZapIcon } from "lucide-react"
 
+import {
+	AboutProps,
+	ExperienceProps,
+	PhotoProps,
+	SkillProps,
+	StackBuiltProps
+} from "@/types"
 
-import { Activity, CodeIcon, ZapIcon } from "lucide-react";
+import { ContentType } from "@/stores/sidebar-store"
 
-
-
-import { AboutProps, ExperienceProps, PhotoProps, SkillProps, StackBuiltProps } from "@/types";
-
-
-
-import { ContentType } from "@/stores/sidebar-store";
-
-
-
-import { Experiences, Profile, Skills } from "@/components/features/home/about";
-import { GithubContent, MonkeyTypeContent } from "@/components/features/home/dashboard";
-
-
-
-
+import { Experiences, Profile, Skills } from "@/components/features/home/about"
+import {
+	GithubContent,
+	MonkeyTypeContent,
+	WakatimeContent
+} from "@/components/features/home/dashboard"
 
 export const PhotosData: PhotoProps[] = [
 	{
@@ -212,7 +227,7 @@ export const SkillsData: SkillProps[] = [
 ]
 
 export const SidebarData: {
-	name: string
+	name: ContentType
 	icon: IconType
 	disabled?: boolean
 }[] = [
@@ -227,11 +242,12 @@ export const SidebarData: {
 	{
 		name: "WakaTime",
 		icon: Activity
-	},
+	}
 ]
 
 export const DashboardData: Partial<Record<ContentType, React.ComponentType>> =
 	{
 		Github: GithubContent,
-		MonkeyType: MonkeyTypeContent
+		MonkeyType: MonkeyTypeContent,
+		WakaTime: WakatimeContent
 	}
