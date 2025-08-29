@@ -2,7 +2,6 @@ export type WakatimeStatsType = {
 	id: string
 	status: string
 	username: string
-	dailyAverage: number
 	editors: WakatimeEditorsType[]
 	languages: WakatimeLanguageType[]
 	categories: WakatimeCategoryType[]
@@ -16,6 +15,9 @@ export type WakatimeStatsType = {
 		start: string
 		end: string
 		timezone: string
+		total: string
+		averageDaily: number
+		averageText: string
 	}
 	allTime: {
 		totalSeconds: number

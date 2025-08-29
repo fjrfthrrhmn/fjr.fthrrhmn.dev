@@ -27,14 +27,17 @@ export async function GET(_req: NextRequest) {
 			username: stats.username,
 			dailyAverage: stats.daily_average,
 			editors: stats.editors,
-			languages: stats.languages.slice(0, 4),
+			languages: stats.languages.slice(0, 5),
 			categories: stats.categories,
 			bestDay: stats.best_day,
 			time: {
 				range: stats.range,
 				start: stats.start,
 				end: stats.end,
-				timezone: stats.timezone
+				timezone: stats.timezone,
+				total: stats.human_readable_total,
+				dailyAverage: stats.daily_average,
+				averageText: stats.human_readable_daily_average
 			},
 			allTime: {
 				totalSeconds: allTime.total_seconds,

@@ -7,6 +7,7 @@ export { default as Typography } from "./typography"
 export { Title } from "./title"
 export { CardCustom } from "./card-custom"
 export { Toaster } from "./sonner"
+export {  } from "./chart"
 export {
 	Form,
 	FormField,

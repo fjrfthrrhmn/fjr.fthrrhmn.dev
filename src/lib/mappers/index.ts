@@ -1,10 +1,21 @@
-import { IconType } from "react-icons"
+import { IconType } from "react-icons";
 
-import { Clock, FolderGit2, GitFork, Target, Zap } from "lucide-react"
 
-import { GithubUserType } from "@/types"
 
-import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils"
+import { Clock, ClockIcon, FolderGit2, GitFork, Target, Zap } from "lucide-react";
+
+
+
+import { GithubUserType, WakatimeStatsType } from "@/types";
+
+
+
+import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils";
+
+
+
+import { formatDate } from "../utils";
+
 
 interface GithubStatItem {
 	value: number
@@ -65,6 +76,37 @@ export function MonkeyMapStats({
 	}[]
 }
 
-export function WakaTimeMapSats() {
-	return []
+export function WakaTimeMapSats({ ...value }: WakatimeStatsType) {
+	return [
+		// {
+		// 	icon: ClockIcon,
+		// 	label: "Start Date",
+		// 	value: formatDate(new Date(value.time.start))
+		// },
+		// {
+		// 	icon: ClockIcon,
+		// 	label: "End Date",
+		// 	value: formatDate(new Date(value.time.end))
+		// },
+		{
+			icon: ClockIcon,
+			label: "Total This Week",
+			value: value.time.total
+		},
+		{
+			icon: ClockIcon,
+			label: "Average Daily Coding Time",
+			value: value.time.averageText
+		},
+		{
+			icon: ClockIcon,
+			label: "Best Day",
+			value: `${formatDate(new Date(value.bestDay.date), "d MMM yyyy")} (${value.bestDay.text})`
+		},
+		{
+			icon: ClockIcon,
+			label: "All-Time Coding Since Joined",
+			value: value.allTime.text
+		}
+	]
 }
