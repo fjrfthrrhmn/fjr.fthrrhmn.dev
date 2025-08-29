@@ -1,25 +1,8 @@
-import { apiHelper } from "@/helpers/api-helper";
+import axios from "axios"
 
-
-
-import { ApiResponseType, WakatimeStatsType } from "@/types";
-import { API_ENDPOINTS } from "@/constants";
-
-
-
-
+import { ApiResponseType, WakatimeStatsType } from "@/types"
 
 export const wakatimeService = {
-	getProfile: async (
-		name: string
-	): Promise<ApiResponseType<WakatimeStatsType>> => {
-		return await apiHelper.get(
-			`${API_ENDPOINTS.wakatime}/users/${name}/all_time_since_today`,
-			{
-				headers: {
-					Authorization: `Bearer ${process.env.WAKATIME_API_KEY}`
-				}
-			}
-		)
-	}
+	getStats: async (): Promise<ApiResponseType<WakatimeStatsType>> =>
+		await axios.get("/api/wakatime")
 }

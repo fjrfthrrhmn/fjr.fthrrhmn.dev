@@ -1,13 +1,15 @@
 import { useQuery } from "@tanstack/react-query"
 
-import { wakatimeService } from "@/services/wakatime-service"
+import { WakatimeStatsType } from "@/types"
+
+import { wakatimeService } from "@/services"
 
 export const useWakatime = () => {
-	const { data: response, ...rest } = useQuery({
-		queryKey: ["Wakatime-profile"],
+	const { data: response, ...rest } = useQuery<WakatimeStatsType>({
+		queryKey: ["wakatime-profile"],
 		queryFn: async () => {
-			const res = await wakatimeService.getProfile("jessen")
-			return res.data.data
+			const res = await wakatimeService.getStats()
+			return res.data
 		}
 	})
 
