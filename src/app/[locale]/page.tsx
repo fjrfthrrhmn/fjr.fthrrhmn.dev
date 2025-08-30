@@ -2,6 +2,7 @@
 
 import {
 	AboutSection,
+	CertificatesSection,
 	DashboardSection,
 	HeroSection,
 	PhotosMarquee,
@@ -25,6 +26,7 @@ export default async function Home() {
 				<PhotosMarquee />
 				<AboutSection />
 				<DashboardSection />
+				<CertificatesSection />
 				<ProjectsSection />
 				<CTA />
 			</div>

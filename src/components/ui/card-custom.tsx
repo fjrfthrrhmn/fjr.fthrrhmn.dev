@@ -34,7 +34,7 @@ const CardCustom = ({
 }: CardCustomProps) => {
   const containerClasses = cn(
     "relative overflow-hidden p-6 rounded-2xl border-2 bg-zinc-800",
-    className
+    className,
   )
 
   const iconClasses = cn(
@@ -54,11 +54,11 @@ const CardCustom = ({
       <div className={cn("relative z-20", classNameContent)}>{children}</div>
 
       {/* Decorative Icon */}
-      {/* {Icon && (
+      {Icon && (
         <div className={iconClasses}>
           <Icon size={iconSize} strokeWidth={2} />
         </div>
-      )} */}
+      )}
 
       {/* Background pattern */}
       <DotPattern

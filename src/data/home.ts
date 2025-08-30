@@ -1,42 +1,27 @@
-import { IconType } from "react-icons"
-import {
-	SiCss3 as IconCss,
-	SiGithub as IconGithub,
-	SiJavascript as IconJavascript,
-	SiLaravel as IconLaravel,
-	SiMongodb as IconMongodb,
-	SiMysql as IconMysql,
-	SiNextdotjs as IconNextJs,
-	SiNodedotjs as IconNodeJs,
-	SiPhp as IconPhp,
-	SiReact as IconReact,
-	SiTailwindcss as IconTailwindCss,
-	SiTypescript as IconTypescript,
-	SiVercel as IconVercel
-} from "react-icons/si"
-import {
-	TbBrandAstro as IconAstro,
-	TbBrandFramerMotion as IconFramerMotion
-} from "react-icons/tb"
+import { IconType } from "react-icons";
+import { SiCss3 as IconCss, SiGithub as IconGithub, SiJavascript as IconJavascript, SiLaravel as IconLaravel, SiMongodb as IconMongodb, SiMysql as IconMysql, SiNextdotjs as IconNextJs, SiNodedotjs as IconNodeJs, SiPhp as IconPhp, SiReact as IconReact, SiTailwindcss as IconTailwindCss, SiTypescript as IconTypescript, SiVercel as IconVercel } from "react-icons/si";
+import { TbBrandAstro as IconAstro, TbBrandFramerMotion as IconFramerMotion } from "react-icons/tb";
 
-import { Activity, ZapIcon } from "lucide-react"
 
-import {
-	AboutProps,
-	ExperienceProps,
-	PhotoProps,
-	SkillProps,
-	StackBuiltProps
-} from "@/types"
 
-import { ContentType } from "@/stores/sidebar-store"
+import { Activity, ZapIcon } from "lucide-react";
 
-import { Experiences, Profile, Skills } from "@/components/features/home/about"
-import {
-	GithubContent,
-	MonkeyTypeContent,
-	WakatimeContent
-} from "@/components/features/home/dashboard"
+
+
+import { AboutProps, ExperienceProps, PhotoProps, SkillProps, StackBuiltProps } from "@/types";
+
+
+
+import { ContentType } from "@/stores/sidebar-store";
+
+
+
+import { Experiences, Profile, Skills } from "@/components/features/home/about";
+import { GithubContent, MonkeyTypeContent, WakatimeContent } from "@/components/features/home/dashboard";
+
+
+
+
 
 export const PhotosData: PhotoProps[] = [
 	{
@@ -251,3 +236,36 @@ export const DashboardData: Partial<Record<ContentType, React.ComponentType>> =
 		MonkeyType: MonkeyTypeContent,
 		WakaTime: WakatimeContent
 	}
+
+export const CertificatesData = [
+	{
+		id: "1",
+		title: "React Advanced Workshop",
+		type: "Web Development",
+		issuer: "Frontend Masters",
+		date: "2024-09-15",
+		no: "FM-REA-0924",
+		image:
+			"https://i.pinimg.com/736x/df/c4/af/dfc4af36361640d225bca68e1365d8e1.jpg"
+	},
+	{
+		id: "2",
+		title: "AWS Solutions Architect",
+		type: "Cloud Computing",
+		issuer: "Amazon Web Services",
+		date: "2023-12-01",
+		no: "AWS-SA-1223",
+		image:
+			"https://i.pinimg.com/736x/df/c4/af/dfc4af36361640d225bca68e1365d8e1.jpg"
+	},
+	{
+		id: "3",
+		title: "UI/UX Design Fundamentals",
+		type: "Design",
+		issuer: "Coursera",
+		date: "2022-07-20",
+		no: "CR-UX-0722",
+		image:
+			"https://i.pinimg.com/736x/df/c4/af/dfc4af36361640d225bca68e1365d8e1.jpg"
+	}
+]

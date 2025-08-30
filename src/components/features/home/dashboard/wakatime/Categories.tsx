@@ -1,17 +1,14 @@
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
+import { WakatimeCategoryType } from "@/types"
 
-
-import { WakatimeCategoryType } from "@/types";
-
-
-
-import { CardCustom, Typography } from "@/components/ui";
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-
-
-
-
+import { CardCustom, Typography } from "@/components/ui"
+import {
+	ChartConfig,
+	ChartContainer,
+	ChartTooltip,
+	ChartTooltipContent
+} from "@/components/ui/chart"
 
 const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 	const chartData = data.map((cat) => ({
@@ -28,7 +25,7 @@ const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 
 	return (
 		<CardCustom className="col-span-3">
-			<div className="flex flex-col mb-6">
+			<div className="flex flex-col mb-6 h-[100px]">
 				<Typography.Title variant="6/bold">Coding Categories</Typography.Title>
 				<Typography.Text variant="sm/normal">
 					Distribusi waktu berdasarkan tipe aktivitas

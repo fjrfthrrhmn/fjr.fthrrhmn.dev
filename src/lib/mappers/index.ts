@@ -1,21 +1,21 @@
-import { IconType } from "react-icons";
+import { IconType } from "react-icons"
 
+import {
+	CalendarCheck2,
+	Clock,
+	Flame,
+	FolderGit2,
+	GitFork,
+	Target,
+	Timer,
+	Zap
+} from "lucide-react"
 
+import { GithubUserType, WakatimeStatsType } from "@/types"
 
-import { CalendarCheck2, Clock, ClockIcon, Flame, FolderGit2, GitFork, Target, Timer, Zap } from "lucide-react";
+import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils"
 
-
-
-import { GithubUserType, WakatimeStatsType } from "@/types";
-
-
-
-import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils";
-
-
-
-import { formatDate } from "../utils";
-
+import { formatDate } from "../utils"
 
 interface GithubStatItem {
 	value: number
