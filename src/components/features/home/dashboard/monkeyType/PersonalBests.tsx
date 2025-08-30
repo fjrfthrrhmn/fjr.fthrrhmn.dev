@@ -1,25 +1,19 @@
-import { useLocale } from "next-intl";
+import { useLocale } from "next-intl"
 
+import { ArrowUp } from "lucide-react"
 
+import { MonkeyUserType, PersonalBestItemType } from "@/types/monkey-types"
 
-import { ArrowUp } from "lucide-react";
+import { formatDate } from "@/lib/utils"
 
-
-
-import { MonkeyUserType, PersonalBestItemType } from "@/types/monkey-types";
-
-
-
-import { formatDate } from "@/lib/utils";
-
-
-
-import { CardCustom, Tooltip, TooltipContent, TooltipTrigger, Typography } from "@/ui";
-import { NumberTicker } from "@/widgets";
-
-
-
-
+import {
+	CardCustom,
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+	Typography
+} from "@/ui"
+import { NumberTicker } from "@/widgets"
 
 type PersonalBestsProps = {
 	data: MonkeyUserType["personalBests"]
@@ -27,7 +21,6 @@ type PersonalBestsProps = {
 
 type BestField = keyof MonkeyUserType["personalBests"]
 
-// TODO: ADD Tooltip
 const PersonalBests = ({ data }: PersonalBestsProps) => {
 	const lang = useLocale() as "en" | "id"
 

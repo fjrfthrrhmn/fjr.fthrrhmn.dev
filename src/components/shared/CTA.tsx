@@ -1,8 +1,14 @@
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 
-import { ArrowRight } from "lucide-react"
 
-import { Button, CardCustom, Container, Typography } from "../ui"
+
+import { IconMessageCircle } from "@tabler/icons-react";
+import { ArrowRight, MessageSquare, MessagesSquare } from "lucide-react";
+
+
+
+import { Button, CardCustom, Container, Typography } from "../ui";
+
 
 const CTA = () => {
 	const t = useTranslations("CTA")
@@ -26,7 +32,8 @@ const CTA = () => {
 					</div>
 
 					<Button size={"lg"}>
-						{t("button")} <ArrowRight strokeWidth={2.5} />
+						<MessagesSquare strokeWidth={2.5} />
+						{t("button")}
 					</Button>
 				</div>
 			</CardCustom>

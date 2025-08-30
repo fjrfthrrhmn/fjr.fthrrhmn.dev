@@ -37,7 +37,8 @@
 	},
 
 	"CTA": {
-		"title": "Yuk, ngobrol",
+		"title": "Yuk, ",
+		"highlight": "ngobrol",
 		"description": "Gue terbuka untuk peluang baru dan kolaborasi. Jangan ragu untuk menghubungi saya kalau ada pertanyaan, ide, atau sekadar mau say hi!",
 		"button": "Mulai Percakapan"
 	},

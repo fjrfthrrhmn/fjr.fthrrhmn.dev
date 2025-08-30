@@ -22,6 +22,8 @@ import {
 	TooltipTrigger
 } from "@/components/ui/tooltip"
 
+import { LanguageToggle } from "../shared/LanguageToggle"
+
 /**
  * Note: Use position fixed according to your needs
  * Desktop navbar is better positioned at the bottom
@@ -33,7 +35,7 @@ import {
 interface Items {
 	title: string
 	icon: LucideIcon | IconType
-	href?: string
+	href: string
 	onClick?: (e: React.MouseEvent<HTMLElement>) => void
 }
 
@@ -135,6 +137,7 @@ const FloatingDockDesktop = ({
 			{items.map((item) => (
 				<IconContainer mouseX={mouseX} key={item.title} {...item} />
 			))}
+			<LanguageToggle />
 		</motion.div>
 	)
 }
@@ -192,91 +195,44 @@ function IconContainer({
 
 	const [hovered, setHovered] = useState(false)
 
-	if (href)
-		return (
-			<Tooltip>
-				<TooltipTrigger>
-					<Link href={href} aria-label={title}>
-						<motion.div
-							ref={ref}
-							style={{ width, height }}
-							onMouseEnter={() => setHovered(true)}
-							onMouseLeave={() => setHovered(false)}
-							className="relative flex aspect-square items-center justify-center rounded-full bg-zinc-800 border"
-						>
-							<motion.div
-								style={{ width: widthIcon, height: heightIcon }}
-								className="flex items-center justify-center"
-							>
-								<Icon size={32} />
-								<span className="sr-only">{title}</span>
-							</motion.div>
-						</motion.div>
-					</Link>
-				</TooltipTrigger>
-				<AnimatePresence mode="wait">
-					{hovered && (
-						<TooltipContent>
-							<motion.div
-								initial={{ x: 20, opacity: 0 }}
-								animate={{ x: 0, opacity: 1 }}
-								exit={{ x: -20, opacity: 0 }}
-								transition={{
-									type: "spring",
-									stiffness: 270
-								}}
-							>
-								{title}
-							</motion.div>
-						</TooltipContent>
-					)}
-				</AnimatePresence>
-			</Tooltip>
-		)
-
-	if (onClick)
-		return (
-			<Tooltip>
-				<TooltipTrigger asChild name={title}>
-					<button
-						onClick={onClick}
-						aria-label={title}
-						type="button"
-						role="button"
+	return (
+		<Tooltip>
+			<TooltipTrigger>
+				<Link href={href} aria-label={title}>
+					<motion.div
+						ref={ref}
+						style={{ width, height }}
+						onMouseEnter={() => setHovered(true)}
+						onMouseLeave={() => setHovered(false)}
+						className="relative flex aspect-square items-center justify-center rounded-full bg-zinc-800 border"
 					>
 						<motion.div
-							ref={ref}
-							style={{ width, height }}
-							onMouseEnter={() => setHovered(true)}
-							onMouseLeave={() => setHovered(false)}
-							className="relative flex aspect-square items-center justify-center rounded-full bg-zinc-800 border"
+							style={{ width: widthIcon, height: heightIcon }}
+							className="flex items-center justify-center"
 						>
-							<motion.div
-								style={{ width: widthIcon, height: heightIcon }}
-								className="flex items-center justify-center"
-							>
-								<Icon size={32} />
-							</motion.div>
+							<Icon size={32} />
+							<span className="sr-only">{title}</span>
 						</motion.div>
-					</button>
-				</TooltipTrigger>
-				<AnimatePresence mode="wait" key={title}>
-					{hovered && (
-						<TooltipContent>
-							<motion.div
-								initial={{ x: 20, opacity: 0 }}
-								animate={{ x: 0, opacity: 1 }}
-								exit={{ x: -20, opacity: 0 }}
-								transition={{
-									type: "spring",
-									stiffness: 270
-								}}
-							>
-								{title}
-							</motion.div>
-						</TooltipContent>
-					)}
-				</AnimatePresence>
-			</Tooltip>
-		)
+					</motion.div>
+				</Link>
+			</TooltipTrigger>
+			<AnimatePresence mode="wait">
+				{hovered && (
+					<TooltipContent>
+						<motion.div
+							initial={{ x: 20, opacity: 0 }}
+							animate={{ x: 0, opacity: 1 }}
+							exit={{ x: -20, opacity: 0 }}
+							transition={{
+								type: "spring",
+								stiffness: 270
+							}}
+						>
+							{title}
+						</motion.div>
+					</TooltipContent>
+				)}
+			</AnimatePresence>
+		</Tooltip>
+	)
 }
