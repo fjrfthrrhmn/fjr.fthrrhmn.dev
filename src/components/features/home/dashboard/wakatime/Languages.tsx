@@ -1,14 +1,17 @@
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 
-import { WakatimeLanguageType } from "@/types"
 
-import { CardCustom, Typography } from "@/components/ui"
-import {
-	ChartConfig,
-	ChartContainer,
-	ChartTooltip,
-	ChartTooltipContent
-} from "@/components/ui/chart"
+
+import { WakatimeLanguageType } from "@/types";
+
+
+
+import { CardCustom, Typography } from "@/components/ui";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+
+
+
+
 
 const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 	const chartData = data.map((lang) => ({
@@ -26,8 +29,10 @@ const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 	return (
 		<CardCustom className="col-span-5">
 			<div className="flex flex-col mb-6">
-				<Typography.Title variant="6/bold">Bar Chart</Typography.Title>
-				<Typography.Text variant="sm/normal">Lorem ipsum dolor</Typography.Text>
+				<Typography.Title variant="6/bold">Top Languages</Typography.Title>
+				<Typography.Text variant="sm/normal">
+					Persentase waktu coding berdasarkan bahasa
+				</Typography.Text>
 			</div>
 
 			<ChartContainer config={chartConfig} className="w-full h-[200px]">

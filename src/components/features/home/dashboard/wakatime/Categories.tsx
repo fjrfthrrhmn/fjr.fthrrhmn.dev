@@ -29,8 +29,10 @@ const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 	return (
 		<CardCustom className="col-span-3">
 			<div className="flex flex-col mb-6">
-				<Typography.Title variant="6/bold">Bar Chart</Typography.Title>
-				<Typography.Text variant="sm/normal">Lorem ipsum dolor</Typography.Text>
+				<Typography.Title variant="6/bold">Coding Categories</Typography.Title>
+				<Typography.Text variant="sm/normal">
+					Distribusi waktu berdasarkan tipe aktivitas
+				</Typography.Text>
 			</div>
 
 			<ChartContainer config={chartConfig} className="w-full h-[200px]">

@@ -2,6 +2,12 @@ export type WakatimeStatsType = {
 	id: string
 	status: string
 	username: string
+	photo: string
+	
+	fullName: string
+	city: WakatimeCityType
+	profileUrl: string
+
 	editors: WakatimeEditorsType[]
 	languages: WakatimeLanguageType[]
 	categories: WakatimeCategoryType[]
@@ -37,6 +43,20 @@ export interface WakatimeEditorsType {
 	text: string
 	hours: number
 	minutes: number
+}
+
+export interface WakatimeCityType {
+	ascii_name: string
+	ascii_state: string
+	country: string
+	country_code: string
+	id: string
+	name: string
+	population: number
+	short_title: string
+	state: string
+	timezone: string
+	title: string
 }
 
 export interface WakatimeCategoryType {

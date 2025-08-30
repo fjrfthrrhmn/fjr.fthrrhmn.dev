@@ -85,7 +85,7 @@ const bestStats = (
 	}
 }
 
-export const formatTimeTyping = (seconds: number) => {
+const formatTimeTyping = (seconds: number) => {
 	const totalSeconds = Math.floor(seconds)
 	const h = Math.floor(totalSeconds / 3600)
 	const m = Math.floor((totalSeconds % 3600) / 60)
@@ -97,4 +97,18 @@ export const formatTimeTyping = (seconds: number) => {
 export const MonkeyTypeUtils = {
 	bestStats,
 	formatTimeTyping
+}
+
+const formatRange = (range: string) => {
+	const mapping: Record<string, string> = {
+		last_7_days: "7 hari terakhir",
+		last_30_days: "30 hari terakhir",
+		last_year: "1 tahun terakhir",
+		all_time: "sepanjang waktu"
+	}
+	return mapping[range] || range
+}
+
+export const WakatimeUtils = {
+	formatRange
 }
