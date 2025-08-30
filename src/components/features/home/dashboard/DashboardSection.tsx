@@ -1,13 +1,17 @@
+import { useTranslations } from "next-intl"
+
 import { Container, Title } from "@/components/ui"
 
 import { Content, Sidebar } from "./index"
 
 const DashboardSection = () => {
+	const t = useTranslations("DashboardSection")
+
 	return (
 		<Container padding="py-32">
 			<Title
-				text="My Dashboard"
-				description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."
+				text={t("title")}
+				description={t("description")}
 				variant="1/extrabold"
 			/>
 

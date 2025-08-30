@@ -1,27 +1,37 @@
-"use client"
+"use client";
 
-import { BotIcon } from "lucide-react"
-import { toast } from "sonner"
+import { useTranslations } from "next-intl";
 
-import { Button, CardCustom, Container, Title } from "@/components/ui"
 
-import { AboutData } from "@/data/home"
+
+import { BotIcon } from "lucide-react";
+import { toast } from "sonner";
+
+
+
+import { Button, CardCustom, Container, Title } from "@/components/ui";
+
+
+
+import { AboutData } from "@/data/home";
+
+
+
+
 
 const AboutSection = () => {
+	const t = useTranslations("AboutSection")
+
 	return (
 		<Container padding="py-32" className="space-y-10">
 			<Title
-				text="Who am I?"
+				text={t("title")}
 				variant={"1/extrabold"}
-				description="Here’s a peek into my journey, skills, and experiences."
+				description={t("description")}
 			>
-				<Button
-					onClick={() =>
-						toast.info("Oops! This feature isn’t available yet 🚧")
-					}
-				>
+				<Button onClick={() => toast.info(t("descriptionToast"))}>
 					<BotIcon />
-					Ask AI About Me
+					{t("buttonOne")}
 				</Button>
 			</Title>
 

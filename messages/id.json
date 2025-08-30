@@ -1,0 +1,44 @@
+{
+	"HeroSection": {
+		"name": "Fajar Fathurrahman",
+		"title": "Halo Geys, Gue Fajar",
+		"description": "Gue senang banget bikin produk inovatif di web dengan desain yang oke. Selalu tertarik mencoba teknologi baru dan senang berkontribusi di open source.",
+		"buttonOne": "Ayo Connect",
+		"buttonTwo": "Lihat Lebih Lanjut"
+	},
+
+	"AboutSection": {
+		"title": "Siapa Gue?",
+		"description": "Nih, cerita singkat tentang perjalanan, skill, dan pengalaman gue.",
+		"descriptionToast": "Waduh! Fitur ini belum tersedia nih 🚧",
+		"buttonOne": "Tanya AI Tentang Gue"
+	},
+
+	"SkillsSection": {
+		"title": "Skill Saya",
+		"description": "Gue Punya pengalaman di berbagai bahasa pemrograman dan framework."
+	},
+
+	"DashboardSection": {
+		"title": "Statistik",
+		"description": "Lihat aktivitas coding, kontribusi, dan progress belajar gue lewat berbagai platform."
+	},
+
+	"CertificatesSection": {
+		"title": "Sertifikat",
+		"description": "Kumpulan sertifikasi yang menunjukkan keterampilan dan perjalanan belajar saya.",
+		"buttonAll": "Lihat Semua Sertifikat"
+	},
+
+	"ProjectsSection": {
+		"title": "Proyek",
+		"description": "Gue suka membangun produk yang bisa menyelesaikan masalah pengguna dengan desain yang menarik.",
+		"buttonAll": "Lihat Semua Projects"
+	},
+
+	"CTA": {
+		"title": "Yuk, ngobrol",
+		"description": "Gue terbuka untuk peluang baru dan kolaborasi. Jangan ragu untuk menghubungi saya kalau ada pertanyaan, ide, atau sekadar mau say hi!",
+		"button": "Mulai Percakapan"
+	}
+}

@@ -1,28 +1,35 @@
-import Image from "next/image"
-import Link from "next/link"
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
 
-import { ArrowRight } from "lucide-react"
 
-import {
-	Button,
-	CardCustom,
-	Container,
-	Title,
-	Typography
-} from "@/components/ui"
+
+import { ArrowRight } from "lucide-react";
+
+
+
+import { Button, CardCustom, Container, Title, Typography } from "@/components/ui";
+
+
+
+
 
 const ProjectsSection = () => {
+	const t = useTranslations("ProjectsSection")
+	
 	return (
 		<Container padding="py-20" className="space-y-10">
 			<Title
-				text="Projects"
-				description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."
+				text={t("title")}
+				description={t("description")}
 				variant="1/extrabold"
 			>
-				<Typography.Text className="flex items-center justify-end gap-2 underline underline-offset-8 decoration-teal-400">
-					<Link href={"#"}>View all projects</Link>
-					<ArrowRight />
-				</Typography.Text>
+				{[...Array(4)].length > 4 && (
+					<Typography.Text className="flex items-center justify-end gap-2 underline underline-offset-8 decoration-teal-400">
+						<Link href={"#"}>{t("buttonAll")}</Link>
+						<ArrowRight />
+					</Typography.Text>
+				)}
 			</Title>
 
 			<div className="grid grid-cols-2 gap-6">

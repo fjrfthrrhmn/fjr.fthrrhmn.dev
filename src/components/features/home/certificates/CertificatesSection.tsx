@@ -1,15 +1,33 @@
-import { Container, Title } from "@/components/ui"
+import { useTranslations } from "next-intl";
 
-import { CertificatesList } from "./"
+
+
+import { Container, Title, Typography } from "@/components/ui";
+
+
+
+import { CertificatesList } from "./";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 
 const CertificatesSection = () => {
+	const t = useTranslations("CertificatesSection")
+
 	return (
 		<Container padding="py-20" className="space-y-10">
 			<Title
-				text="Certificates"
-				description="I love building products that solve problems. I take pride in looking at things from end users’ perspectives."
+				text={t("title")}
+				description={t("description")}
 				variant="1/extrabold"
-			/>
+			>
+				{[...Array(4)].length > 4 && (
+					<Typography.Text className="flex items-center justify-end gap-2 underline underline-offset-8 decoration-teal-400">
+						<Link href={"#"}>{t("buttonAll")}</Link>
+						<ArrowRight />
+					</Typography.Text>
+				)}
+			</Title>
 
 			<CertificatesList />
 		</Container>
