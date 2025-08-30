@@ -17,6 +17,7 @@ import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils"
 
 import { formatDate } from "../utils"
 
+type LANG = "en" | "id"
 interface GithubStatItem {
 	value: number
 	label: string
@@ -46,24 +47,36 @@ type BestStats = {
 	timeTyping: number
 }
 
-export function MonkeyMapStats({
-	bestWPM,
-	bestAccuracy,
-	timeTyping
-}: BestStats) {
+export function MonkeyMapStats(
+	{ bestWPM, bestAccuracy, timeTyping }: BestStats,
+	lang: LANG = "en"
+) {
+	const labels: Record<LANG, Record<string, string>> = {
+		en: {
+			bestWPM: "Best WPM",
+			bestAccuracy: "Best Accuracy",
+			timeTyping: "Time Typing"
+		},
+		id: {
+			bestWPM: "WPM Terbaik",
+			bestAccuracy: "Akurasi Terbaik",
+			timeTyping: "Waktu Mengetik"
+		}
+	}
+
 	return [
 		{
-			label: "Best WPM",
+			label: labels[lang].bestWPM,
 			value: bestWPM ?? 0,
 			icon: Zap
 		},
 		{
-			label: "Best Accuracy",
+			label: labels[lang].bestAccuracy,
 			value: bestAccuracy ?? 0,
 			icon: Target
 		},
 		{
-			label: "Time Typing",
+			label: labels[lang].timeTyping,
 			value: timeTyping ?? 0,
 			formatter: MonkeyTypeUtils.formatTimeTyping,
 			icon: Clock
@@ -76,26 +89,41 @@ export function MonkeyMapStats({
 	}[]
 }
 
-export function WakaTimeMapSats({ ...value }: WakatimeStatsType) {
+export function WakaTimeMapStats(value: WakatimeStatsType, lang: LANG = "en") {
+	const labels: Record<LANG, Record<string, string>> = {
+		en: {
+			total: "Total This Week",
+			avg: "Avg Daily Coding",
+			best: "Best Day",
+			all: "All-Time Coding"
+		},
+		id: {
+			total: "Total Minggu Ini",
+			avg: "Rata-rata Harian",
+			best: "Hari Terbaik",
+			all: "Total Sepanjang Waktu"
+		}
+	}
+
 	return [
 		{
 			icon: Clock,
-			label: "Total This Week",
+			label: labels[lang].total,
 			value: value.time.total
 		},
 		{
 			icon: Timer,
-			label: "Avg Daily Coding",
+			label: labels[lang].avg,
 			value: value.time.averageText
 		},
 		{
 			icon: Flame,
-			label: "Best Day",
+			label: labels[lang].best,
 			value: `${formatDate(new Date(value.bestDay.date), "d MMM yyyy")} (${value.bestDay.text})`
 		},
 		{
 			icon: CalendarCheck2,
-			label: "All-Time Coding",
+			label: labels[lang].all,
 			value: value.allTime.text
 		}
 	] as {

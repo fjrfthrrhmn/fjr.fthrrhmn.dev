@@ -1,16 +1,25 @@
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { useTranslations } from "next-intl";
 
-import { WakatimeLanguageType } from "@/types"
 
-import { CardCustom, Typography } from "@/components/ui"
-import {
-	ChartConfig,
-	ChartContainer,
-	ChartTooltip,
-	ChartTooltipContent
-} from "@/components/ui/chart"
+
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+
+
+
+import { WakatimeLanguageType } from "@/types";
+
+
+
+import { CardCustom, Typography } from "@/components/ui";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+
+
+
+
 
 const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
+	const t = useTranslations("Wakatime")
+
 	const chartData = data.map((lang) => ({
 		name: lang.name,
 		value: lang.percent
@@ -18,7 +27,7 @@ const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 
 	const chartConfig = {
 		value: {
-			label: "Usage",
+			label: t("tooltip"),
 			color: "#2dd4bf"
 		}
 	} satisfies ChartConfig
@@ -26,9 +35,11 @@ const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 	return (
 		<CardCustom className="col-span-5">
 			<div className="flex flex-col mb-6 h-[100px]">
-				<Typography.Title variant="6/bold">Top Languages</Typography.Title>
+				<Typography.Title variant="6/bold">
+					{t("topLanguages")}
+				</Typography.Title>
 				<Typography.Text variant="sm/normal">
-					Persentase waktu coding berdasarkan bahasa
+					{t("topLanguagesDesc")}
 				</Typography.Text>
 			</div>
 

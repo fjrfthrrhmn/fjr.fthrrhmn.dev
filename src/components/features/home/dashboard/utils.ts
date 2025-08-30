@@ -99,14 +99,25 @@ export const MonkeyTypeUtils = {
 	formatTimeTyping
 }
 
-const formatRange = (range: string) => {
-	const mapping: Record<string, string> = {
-		last_7_days: "7 hari terakhir",
-		last_30_days: "30 hari terakhir",
-		last_year: "1 tahun terakhir",
-		all_time: "sepanjang waktu"
+type Lang = "en" | "id"
+
+const formatRange = (range: string, lang: Lang = "id") => {
+	const mapping: Record<Lang, Record<string, string>> = {
+		en: {
+			last_7_days: "Last 7 days",
+			last_30_days: "Last 30 days",
+			last_year: "Last year",
+			all_time: "All time"
+		},
+		id: {
+			last_7_days: "7 hari terakhir",
+			last_30_days: "30 hari terakhir",
+			last_year: "1 tahun terakhir",
+			all_time: "Sepanjang waktu"
+		}
 	}
-	return mapping[range] || range
+
+	return mapping[lang][range] || range
 }
 
 export const WakatimeUtils = {

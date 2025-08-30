@@ -41,5 +41,14 @@
 		"highlight": "in touch",
 		"description": "I’m open to new opportunities and collaborations. Feel free to reach out if you have a question, an idea, or just want to say hello!",
 		"button": "Start a Conversation"
+	},
+
+	"Wakatime": {
+		"headerText": "Summary of programming activities during",
+		"tooltip": "Usage",
+		"topLanguages": "Top Languages",
+		"topLanguagesDesc": "Persentase waktu coding berdasarkan bahasa",
+		"codingCategories": "Coding Categories",
+		"codingCategoriesDesc": "Distribution of coding time by activity type"
 	}
 }

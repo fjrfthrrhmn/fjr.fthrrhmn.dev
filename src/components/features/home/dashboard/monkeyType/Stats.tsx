@@ -1,16 +1,26 @@
-"use client"
+"use client";
 
-import { IconTimeDuration10 } from "@tabler/icons-react"
+import { IconTimeDuration10 } from "@tabler/icons-react";
 
-import { MonkeyUserType } from "@/types/monkey-types"
 
-import { MonkeyMapStats } from "@/lib/mappers"
 
-import { CardCustom, Typography } from "@/components/ui"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui"
-import { NumberTicker } from "@/widgets"
+import { MonkeyUserType } from "@/types/monkey-types";
 
-import { MonkeyTypeUtils } from "../utils"
+
+
+import { MonkeyMapStats } from "@/lib/mappers";
+
+
+
+import { CardCustom, Typography } from "@/components/ui";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui";
+import { NumberTicker } from "@/widgets";
+
+
+
+import { MonkeyTypeUtils } from "../utils";
+import { useLocale } from "next-intl";
+
 
 type StatsProps = {
 	dataBest: MonkeyUserType["personalBests"]
@@ -18,6 +28,8 @@ type StatsProps = {
 }
 
 const Stats = ({ dataBest, dataTime }: StatsProps) => {
+	const lang = useLocale() as "en" | "id"
+
 	const { ...data } = MonkeyTypeUtils.bestStats(dataBest, dataTime)
 
 	return (
@@ -25,7 +37,7 @@ const Stats = ({ dataBest, dataTime }: StatsProps) => {
 			className="col-span-4 p-2"
 			classNameContent="grid grid-cols-4 gap-4 text-center items-center justify-center w-full h-full"
 		>
-			{MonkeyMapStats({ ...data }).map((item, index) => (
+			{MonkeyMapStats({ ...data }, lang).map((item, index) => (
 				<StatsItem key={index} {...item} />
 			))}
 		</CardCustom>

@@ -1,3 +1,7 @@
+import { useLocale } from "next-intl";
+
+
+
 import { ArrowUp } from "lucide-react";
 
 
@@ -25,6 +29,8 @@ type BestField = keyof MonkeyUserType["personalBests"]
 
 // TODO: ADD Tooltip
 const PersonalBests = ({ data }: PersonalBestsProps) => {
+	const lang = useLocale() as "en" | "id"
+
 	return (
 		<div className="col-span-6 grid grid-cols-2 gap-4">
 			{(Object.keys(data) as BestField[]).map((field) => (
@@ -47,7 +53,7 @@ const PersonalBests = ({ data }: PersonalBestsProps) => {
 
 			<div className="bg-zinc-800 rounded-xl border px-4 py-1.5 w-max h-max">
 				<small className="flex gap-1 items-end">
-					Hover for details
+					{lang === "en" ? "Hover for details" : "Arahkan kursor untuk detail"}
 					<ArrowUp size={18} className="animate-bounce" />
 				</small>
 			</div>
@@ -93,7 +99,9 @@ const BestPersonalItem = ({ field, mode, record }: BestPersonalItemProps) => {
 						<Typography.Text className="text-background" variant="xs/normal">
 							{label}:
 						</Typography.Text>
-						<Typography.Text className="text-background" variant="xs/normal">{value.toFixed(0)}</Typography.Text>
+						<Typography.Text className="text-background" variant="xs/normal">
+							{value.toFixed(0)}
+						</Typography.Text>
 					</div>
 				))}
 			</TooltipContent>

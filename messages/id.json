@@ -40,5 +40,14 @@
 		"title": "Yuk, ngobrol",
 		"description": "Gue terbuka untuk peluang baru dan kolaborasi. Jangan ragu untuk menghubungi saya kalau ada pertanyaan, ide, atau sekadar mau say hi!",
 		"button": "Mulai Percakapan"
+	},
+
+	"Wakatime": {
+		"headerText": "Overview aktivitas coding selama",
+		"tooltip": "Penggunaan",
+		"topLanguages": "Bahasa Teratas",
+		"topLanguagesDesc": "Persentase waktu coding berdasarkan bahasa",
+		"codingCategories": "Kategori Coding",
+		"codingCategoriesDesc": "Distribusi waktu berdasarkan tipe aktivitas"
 	}
 }

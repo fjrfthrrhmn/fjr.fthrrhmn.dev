@@ -1,16 +1,25 @@
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { useTranslations } from "next-intl";
 
-import { WakatimeCategoryType } from "@/types"
 
-import { CardCustom, Typography } from "@/components/ui"
-import {
-	ChartConfig,
-	ChartContainer,
-	ChartTooltip,
-	ChartTooltipContent
-} from "@/components/ui/chart"
+
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+
+
+
+import { WakatimeCategoryType } from "@/types";
+
+
+
+import { CardCustom, Typography } from "@/components/ui";
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+
+
+
+
 
 const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
+	const t = useTranslations("Wakatime")
+
 	const chartData = data.map((cat) => ({
 		name: cat.name,
 		value: cat.percent
@@ -18,7 +27,7 @@ const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 
 	const chartConfig = {
 		value: {
-			label: "Usage",
+			label: t("tooltip"),
 			color: "#2dd4bf"
 		}
 	} satisfies ChartConfig
@@ -26,9 +35,11 @@ const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 	return (
 		<CardCustom className="col-span-3">
 			<div className="flex flex-col mb-6 h-[100px]">
-				<Typography.Title variant="6/bold">Coding Categories</Typography.Title>
+				<Typography.Title variant="6/bold">
+					{t("codingCategories")}
+				</Typography.Title>
 				<Typography.Text variant="sm/normal">
-					Distribusi waktu berdasarkan tipe aktivitas
+					{t("codingCategoriesDesc")}
 				</Typography.Text>
 			</div>
 

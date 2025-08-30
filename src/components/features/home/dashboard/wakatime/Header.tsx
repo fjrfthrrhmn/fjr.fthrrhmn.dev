@@ -1,3 +1,4 @@
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 
@@ -20,6 +21,9 @@ import { WakatimeUtils } from "../utils";
 type HeaderProps = Pick<WakatimeStatsType, "username" | "time" | "photo" | "city">
 
 const Header = ({ ...props }: HeaderProps) => {
+	const t = useTranslations("Wakatime")
+	const lang = useLocale() as "en" | "id" 
+
   const { city, photo, time, username } = props
 
 	return (
@@ -42,14 +46,16 @@ const Header = ({ ...props }: HeaderProps) => {
 							{username}
 						</Typography.Title>
 						<Typography.Text variant="xs/normal">
-							Overview aktivitas coding selama{" "}
-							{WakatimeUtils.formatRange(time.range)}.
+							{t("headerText")}{" "}
+							{WakatimeUtils.formatRange(time.range, lang)}.
 						</Typography.Text>
 					</div>
 				</div>
 
 				<div className="flex flex-col items-end gap-1">
-					<Typography.Title variant="6/semibold">{city.short_title}</Typography.Title>
+					<Typography.Title variant="6/semibold">
+						{city.short_title}
+					</Typography.Title>
 					<Typography.Text variant="xs/normal">
 						{formatDate(new Date(time.start), "d MMM")}
 						{" - "}
