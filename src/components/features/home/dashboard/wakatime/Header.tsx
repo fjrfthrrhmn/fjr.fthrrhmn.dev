@@ -1,35 +1,34 @@
-import { useLocale, useTranslations } from "next-intl";
-import Image from "next/image";
+import { useLocale, useTranslations } from "next-intl"
+import Image from "next/image"
 
+import { WakatimeStatsType } from "@/types"
 
+import { formatDate } from "@/lib/utils"
 
-import { WakatimeStatsType } from "@/types";
+import {
+	Avatar,
+	AvatarFallback,
+	CardCustom,
+	Typography
+} from "@/components/ui"
 
+import { WakatimeUtils } from "../utils"
 
-
-import { formatDate } from "@/lib/utils";
-
-
-
-import { Avatar, AvatarFallback, AvatarImage, CardCustom, Typography } from "@/components/ui";
-
-
-
-import { WakatimeUtils } from "../utils";
-
-
-type HeaderProps = Pick<WakatimeStatsType, "username" | "time" | "photo" | "city">
+type HeaderProps = Pick<
+	WakatimeStatsType,
+	"username" | "time" | "photo" | "city"
+>
 
 const Header = ({ ...props }: HeaderProps) => {
 	const t = useTranslations("Wakatime")
-	const lang = useLocale() as "en" | "id" 
+	const lang = useLocale() as "en" | "id"
 
-  const { city, photo, time, username } = props
+	const { city, photo, time, username } = props
 
 	return (
 		<CardCustom>
-			<div className="w-full flex items-center justify-between">
-				<div className="flex items-center gap-4">
+			<div className="w-full flex flex-col sm:items-center sm:justify-between md:flex-row gap-4">
+				<div className="w-full flex flex-col sm:flex-row sm:items-center gap-4">
 					<Avatar size="size-12">
 						<Image
 							src={photo}
@@ -46,13 +45,12 @@ const Header = ({ ...props }: HeaderProps) => {
 							{username}
 						</Typography.Title>
 						<Typography.Text variant="xs/normal">
-							{t("headerText")}{" "}
-							{WakatimeUtils.formatRange(time.range, lang)}.
+							{t("headerText")} {WakatimeUtils.formatRange(time.range, lang)}.
 						</Typography.Text>
 					</div>
 				</div>
 
-				<div className="flex flex-col items-end gap-1">
+				<div className="flex flex-col sm:items-end w-full">
 					<Typography.Title variant="6/semibold">
 						{city.short_title}
 					</Typography.Title>

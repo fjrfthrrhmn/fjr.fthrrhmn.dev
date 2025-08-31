@@ -1,19 +1,11 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
+import { useTranslations } from "next-intl"
+import Image from "next/image"
 
+import { LucideArrowRight, LucideSend } from "lucide-react"
 
-
-import { LucideArrowRight, LucideSend } from "lucide-react";
-
-
-
-import { BuiltWith } from "@/shared";
-import { Button, Container, Typography } from "@/ui";
-import { BoxReveal } from "@/widgets";
-
-
-
-
+import { BuiltWith } from "@/shared"
+import { Button, Container, Typography } from "@/ui"
+import { BoxReveal } from "@/widgets"
 
 const HeroSection = () => {
 	const t = useTranslations("HeroSection")

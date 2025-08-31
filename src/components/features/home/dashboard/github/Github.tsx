@@ -10,15 +10,13 @@ const CalendarGithub = dynamic(() => import("./Calendar"), {
 	ssr: false
 })
 
-const Github = ({ className }: { className?: string }) => {
+const Github = () => {
 	const { data } = useGithubProfile()
 
 	if (!data) return null
 
 	return (
-		<div
-			className={`grid grid-cols-6 gap-4 ${className} transition duration-200 ease-in`}
-		>
+		<div className="grid grid-cols-1 gap-4 w-full">
 			<ProfileGithub {...data} />
 			<StatsGithub />
 			<CalendarGithub />

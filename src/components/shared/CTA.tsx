@@ -2,8 +2,7 @@ import { useTranslations } from "next-intl";
 
 
 
-import { IconMessageCircle } from "@tabler/icons-react";
-import { ArrowRight, MessageSquare, MessagesSquare } from "lucide-react";
+import { MessagesSquare } from "lucide-react";
 
 
 
@@ -15,9 +14,9 @@ const CTA = () => {
 
 	return (
 		<Container padding="py-20">
-			<CardCustom className="w-full h-max px-12 py-8">
-				<div className="grid grid-cols-3 items-center gap-x-10">
-					<div className="col-span-2 flex flex-col gap-6 max-w-xl">
+			<CardCustom className="w-full h-max md:px-12 md:py-8">
+				<div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-y-4 gap-x-10">
+					<div className="lg:col-span-2 flex flex-col gap-6 w-full sm:max-w-xl">
 						<Typography.Title variant="1/extrabold">
 							{t("title")}{" "}
 							<span
@@ -31,10 +30,10 @@ const CTA = () => {
 						<Typography.Text>{t("description")}</Typography.Text>
 					</div>
 
-					<Button size={"lg"}>
-						<MessagesSquare strokeWidth={2.5} />
-						{t("button")}
-					</Button>
+						<Button size={"lg"}>
+							<MessagesSquare strokeWidth={2.5} />
+							{t("button")}
+						</Button>
 				</div>
 			</CardCustom>
 		</Container>

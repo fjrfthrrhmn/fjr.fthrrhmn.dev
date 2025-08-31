@@ -1,21 +1,16 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"
 
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
+import { WakatimeCategoryType } from "@/types"
 
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
-
-
-
-import { WakatimeCategoryType } from "@/types";
-
-
-
-import { CardCustom, Typography } from "@/components/ui";
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-
-
-
-
+import { CardCustom, Typography } from "@/components/ui"
+import {
+	ChartConfig,
+	ChartContainer,
+	ChartTooltip,
+	ChartTooltipContent
+} from "@/components/ui/chart"
 
 const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 	const t = useTranslations("Wakatime")
@@ -33,8 +28,8 @@ const Categories = ({ data }: { data: WakatimeCategoryType[] }) => {
 	} satisfies ChartConfig
 
 	return (
-		<CardCustom className="col-span-3">
-			<div className="flex flex-col mb-6 h-[100px]">
+		<CardCustom className="lg:col-span-3">
+			<div className="flex flex-col mb-6 h-[130px]">
 				<Typography.Title variant="6/bold">
 					{t("codingCategories")}
 				</Typography.Title>

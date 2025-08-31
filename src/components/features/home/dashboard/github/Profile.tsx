@@ -14,11 +14,11 @@ type ProfileProps = Pick<
 >
 
 const Profile = ({ ...props }: ProfileProps) => {
-	const { avatarUrl, bio, followers, following, login, name, url } = props
+	const { avatarUrl, login, name, url } = props
 
 	return (
-		<CardCustom className="col-span-2">
-			<div className="flex flex-col gap-4">
+		<CardCustom>
+			<div className="flex flex-col sm:flex-row gap-4">
 				<Avatar size="size-16">
 					<Image
 						src={

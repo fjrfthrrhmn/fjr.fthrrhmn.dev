@@ -1,22 +1,20 @@
-import { useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl"
+import Image from "next/image"
+import Link from "next/link"
 
+import { ArrowRight } from "lucide-react"
 
-
-import { ArrowRight } from "lucide-react";
-
-
-
-import { Button, CardCustom, Container, Title, Typography } from "@/components/ui";
-
-
-
-
+import {
+	Button,
+	CardCustom,
+	Container,
+	Title,
+	Typography
+} from "@/components/ui"
 
 const ProjectsSection = () => {
 	const t = useTranslations("ProjectsSection")
-	
+
 	return (
 		<Container padding="py-20" className="space-y-10">
 			<Title
@@ -32,7 +30,7 @@ const ProjectsSection = () => {
 				)}
 			</Title>
 
-			<div className="grid grid-cols-2 gap-6">
+			<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 				{[...Array(4)].map((item, index) => {
 					return (
 						<CardCustom key={index} className="group">
@@ -51,7 +49,7 @@ const ProjectsSection = () => {
 									</Typography.Text>
 								</div>
 
-								<div className="flex justify-between">
+								<div className="flex flex-col gap-4 sm:flex-row justify-between">
 									<Button>
 										Live
 										<ArrowRight className="-rotate-45" />

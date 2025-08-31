@@ -15,11 +15,10 @@ const getGradient = (streak: number) => {
 	return "from-zinc-700 via-zinc-800 to-zinc-900"
 }
 
-const StreakCard = ({ maxStreak, streak }: StreakCardProps) => {
-	console.log('total streaks', streak)
+const StreakCard = ({ maxStreak }: StreakCardProps) => {
 	return (
 		<div
-			className={`relative overflow-hidden rounded-2xl border-2 px-4 py-6 bg-gradient-to-b ${getGradient(
+			className={`sm:col-span-2 lg:col-span-1 relative overflow-hidden rounded-2xl border-2 px-4 py-6 bg-gradient-to-b ${getGradient(
 				maxStreak
 			)}`}
 		>

@@ -1,1 +1,1 @@
-export { wakatimeService } from './wakatime-service'
+export { wakatimeService } from "./wakatime-service"

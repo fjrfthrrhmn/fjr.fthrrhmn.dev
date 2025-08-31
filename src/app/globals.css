@@ -175,6 +175,6 @@
 	}
 
 	small {
-		@apply text-paragraph
+		@apply text-paragraph;
 	}
 }

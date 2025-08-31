@@ -8,7 +8,7 @@ const CertificatesList = () => {
 	// if empty
 
 	return (
-		<div className="grid grid-cols-2 gap-6">
+		<div className="grid lg:grid-cols-2 gap-6">
 			{CertificatesData.map((item, index) => {
 				return (
 					<CardCustom key={index} className="p-4">

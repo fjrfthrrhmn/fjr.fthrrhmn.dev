@@ -3,7 +3,7 @@ export type WakatimeStatsType = {
 	status: string
 	username: string
 	photo: string
-	
+
 	fullName: string
 	city: WakatimeCityType
 	profileUrl: string

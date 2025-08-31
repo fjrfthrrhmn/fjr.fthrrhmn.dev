@@ -2,7 +2,6 @@
 
 import React from "react"
 import GitHubCalendar from "react-github-calendar"
-import dynamic from "next/dynamic"
 
 import { useGithubProfile } from "@/hooks"
 
@@ -19,7 +18,7 @@ const Calendar = () => {
 	const transformed = GithubUtils?.transformContributions(contributionCalendar)
 
 	return (
-		<CardCustom className="col-span-6">
+		<CardCustom>
 			<GitHubCalendar
 				username="dummy"
 				{...GithubConfig.calendarConfig}

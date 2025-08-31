@@ -1,21 +1,16 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"
 
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
+import { WakatimeLanguageType } from "@/types"
 
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
-
-
-
-import { WakatimeLanguageType } from "@/types";
-
-
-
-import { CardCustom, Typography } from "@/components/ui";
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-
-
-
-
+import { CardCustom, Typography } from "@/components/ui"
+import {
+	ChartConfig,
+	ChartContainer,
+	ChartTooltip,
+	ChartTooltipContent
+} from "@/components/ui/chart"
 
 const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 	const t = useTranslations("Wakatime")
@@ -33,8 +28,8 @@ const Languages = ({ data }: { data: WakatimeLanguageType[] }) => {
 	} satisfies ChartConfig
 
 	return (
-		<CardCustom className="col-span-5">
-			<div className="flex flex-col mb-6 h-[100px]">
+		<CardCustom className="lg:col-span-5">
+			<div className="flex flex-col mb-6 h-[130px]">
 				<Typography.Title variant="6/bold">
 					{t("topLanguages")}
 				</Typography.Title>

@@ -1,22 +1,13 @@
-"use client";
+"use client"
 
-import { SiGithub } from "react-icons/si";
+import { useGithubProfile } from "@/hooks"
+import { GithubMapStats } from "@/lib/mappers"
 
+import { CardCustom, Typography } from "@/components/ui"
+import { NumberTicker } from "@/widgets"
 
-
-import { useGithubProfile } from "@/hooks";
-import { GithubMapStats } from "@/lib/mappers";
-
-
-
-import { CardCustom, Typography } from "@/components/ui";
-import { NumberTicker } from "@/widgets";
-
-
-
-import { StreakCardGithub } from ".";
-import { GithubUtils } from "../utils";
-
+import { StreakCardGithub } from "."
+import { GithubUtils } from "../utils"
 
 const Stats = () => {
 	const { contributions } = useGithubProfile()
@@ -26,7 +17,7 @@ const Stats = () => {
 		GithubUtils.calculateStreaks(contributionCalendar)
 
 	return (
-		<div className="col-span-4 grid grid-cols-3 gap-4 items-stretch">
+		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
 			{GithubMapStats(contributions)?.map((stat, index) => (
 				<CardCustom
 					key={index}

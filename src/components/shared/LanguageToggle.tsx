@@ -1,15 +1,9 @@
-"use client";
+"use client"
 
-import { useLocale } from "next-intl";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { useLocale } from "next-intl"
+import { usePathname, useRouter } from "next/navigation"
 
-
-
-import { Button } from "@/ui";
-
-
-
-
+import { Button } from "@/ui"
 
 export const LanguageToggle = () => {
 	const router = useRouter()
@@ -19,23 +13,19 @@ export const LanguageToggle = () => {
 	const nextLocale = locale === "en" ? "id" : "en"
 
 	const switchLanguage = () => {
-		// hapus prefix locale lama
 		const segments = pathname.split("/")
 		const isLocalePrefix = segments[1] === "en" || segments[1] === "id"
 
 		const cleanPath = isLocalePrefix
-			? "/" + segments.slice(2).join("/") // buang locale prefix
+			? "/" + segments.slice(2).join("/")
 			: pathname
 
-		// build ulang URL dengan nextLocale
 		const nextPath = `/${nextLocale}${cleanPath === "/" ? "" : cleanPath}`
 
 		router.replace(nextPath)
 	}
 
 	return (
-		<Button onClick={switchLanguage}>
-			{locale === "en" ? "🇮🇩 ID" : "🇬🇧 EN"}
-		</Button>
+		<Button onClick={switchLanguage}>{locale === "en" ? "ID" : "EN"}</Button>
 	)
 }

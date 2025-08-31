@@ -1,15 +1,21 @@
-import { clsx, type ClassValue } from "clsx";
-import { format as dateFnsFormat, setDefaultOptions } from "date-fns";
-import { enUS, tr } from "date-fns/locale";
-import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from "clsx"
+import { format as dateFnsFormat, setDefaultOptions } from "date-fns"
+import { enUS, tr } from "date-fns/locale"
+import { twMerge } from "tailwind-merge"
 
-
-
-import { ACCENTS_REGEX, APP_CONFIG, CHAR_MAP, CURRENCY_CONFIG, DEFAULT_CURRENCY, EDGE_DASHES_REGEX, INVALID_CHARS_REGEX, MULTIPLE_DASHES_REGEX, TURKISH_CHARS_REGEX, WHITESPACE_REGEX, type CurrencyCode } from "@/constants";
-
-
-
-
+import {
+	ACCENTS_REGEX,
+	APP_CONFIG,
+	CHAR_MAP,
+	CURRENCY_CONFIG,
+	DEFAULT_CURRENCY,
+	EDGE_DASHES_REGEX,
+	INVALID_CHARS_REGEX,
+	MULTIPLE_DASHES_REGEX,
+	TURKISH_CHARS_REGEX,
+	WHITESPACE_REGEX,
+	type CurrencyCode
+} from "@/constants"
 
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs))

@@ -2,14 +2,6 @@
 
 import { Balancer } from "react-wrap-balancer"
 import { useTranslations } from "next-intl"
-import Link from "next/link"
-
-import { Github } from "lucide-react"
-
-import { APP_CONFIG } from "@/constants"
-
-import { Button } from "@/ui"
-
 export function Title() {
 	const t = useTranslations("Dashboard")
 

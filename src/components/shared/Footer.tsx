@@ -3,15 +3,13 @@ import { Typography } from "../ui"
 const Footer = () => {
 	return (
 		<>
-			<footer className="py-12  bg-zinc-950">
-				<div className="container grid grid-cols-1 lg:grid-cols-4">
-					<div className="col-span-2">
-						<Typography.Text variant="md/normal">
-							© 2021 – present Akash Hamirwasia.
-						</Typography.Text>
-					</div>
+			<footer className="py-16 pb-24 bg-zinc-950">
+				<div className="container px-4 grid grid-cols-2 sm:gap-4">
+					<Typography.Text variant="md/normal">
+						© 2021 – present FjrFthrrhmn.
+					</Typography.Text>
 
-					<div className="lg:col-span-2 flex flex-col  gap-4 justify-between">
+					<div className="mt-10 sm:m-0 w-full h-full grid grid-cols-2 lg:flex  gap-4">
 						{["Projects", "Blog", "Talks", "Store", "Slides", "Contact"].map(
 							(item, index) => {
 								return (

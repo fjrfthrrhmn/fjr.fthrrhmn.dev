@@ -1,3 +1,4 @@
+import { useLocale } from "next-intl"
 import Image from "next/image"
 
 import { Flame } from "lucide-react"
@@ -6,7 +7,7 @@ import { MonkeyUserType } from "@/types/monkey-types"
 
 import { formatDate } from "@/lib/utils"
 
-import { Avatar, CardCustom, Typography } from "@/components/ui"
+import { Avatar, AvatarFallback, CardCustom, Typography } from "@/components/ui"
 
 export type ProfileProps = {
 	data: Pick<
@@ -22,9 +23,9 @@ export type ProfileProps = {
 }
 
 const Profile = ({ data }: ProfileProps) => {
-	const SRC_AVATAR =
-		`https://cdn.discordapp.com/avatars/${data.discordId}/${data.discordAvatar}.png` ||
-		"https://i.pinimg.com/736x/de/a8/68/dea868a8d880e9913c4ebb7a558b475f.jpg"
+	const lang = useLocale() as "en" | "id"
+
+	const SRC_AVATAR = `https://cdn.discordapp.com/avatars/${data.discordId}/${data.discordAvatar}.png`
 
 	const bgStreak: Record<number, string> = {
 		5: "bg-yellow-500/20 text-yellow-400",
@@ -40,7 +41,7 @@ const Profile = ({ data }: ProfileProps) => {
 	}
 
 	return (
-		<CardCustom className="col-span-2 px-4">
+		<CardCustom className="lg:col-span-2 px-4">
 			<div className="flex items-center gap-4">
 				<Avatar size="size-16">
 					<Image
@@ -50,6 +51,7 @@ const Profile = ({ data }: ProfileProps) => {
 						height={100}
 						unoptimized
 					/>
+					<AvatarFallback>{data.name.slice(0, 2)}</AvatarFallback>
 				</Avatar>
 
 				<div className="flex flex-col gap-0">
@@ -57,7 +59,8 @@ const Profile = ({ data }: ProfileProps) => {
 						{data.name}
 					</Typography.Title>
 					<small>
-						Joined {formatDate(new Date(data.addedAt), "d MMM yyyy", "id")}
+						{lang === "en" ? "Joined" : "Bergabung"}{" "}
+						{formatDate(new Date(data.addedAt), "d MMM yyyy", "id")}
 					</small>
 
 					<div

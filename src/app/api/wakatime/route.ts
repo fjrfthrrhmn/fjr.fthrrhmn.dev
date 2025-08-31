@@ -1,18 +1,12 @@
-import { NextRequest } from "next/server";
+import { NextRequest } from "next/server"
 
+import axios from "axios"
 
-
-import axios from "axios";
-
-
-
-import { API_ENDPOINTS, API_KEYS } from "@/constants";
-
-
-
-
+import { API_ENDPOINTS, API_KEYS } from "@/constants"
 
 export async function GET(_req: NextRequest) {
+	console.log(_req)
+	
 	try {
 		const URL_USERS = `${API_ENDPOINTS.wakatime}/users/current`
 		const URL_STATS = `${API_ENDPOINTS.wakatime}/users/current/stats/last_7_days`

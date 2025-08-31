@@ -10,7 +10,7 @@ const MonkeyType = () => {
 	if (!data) return
 
 	return (
-		<div className="grid grid-cols-6 gap-4">
+		<div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
 			<ProfileMonkeyType data={data} />
 			<StatsMonkeyType
 				dataBest={data.personalBests}

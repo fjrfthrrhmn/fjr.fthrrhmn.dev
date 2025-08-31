@@ -1,15 +1,11 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"
+import Link from "next/link"
 
+import { ArrowRight } from "lucide-react"
 
+import { Container, Title, Typography } from "@/components/ui"
 
-import { Container, Title, Typography } from "@/components/ui";
-
-
-
-import { CertificatesList } from "./";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
+import { CertificatesList } from "./"
 
 const CertificatesSection = () => {
 	const t = useTranslations("CertificatesSection")

@@ -36,7 +36,6 @@ interface Items {
 	title: string
 	icon: LucideIcon | IconType
 	href: string
-	onClick?: (e: React.MouseEvent<HTMLElement>) => void
 }
 
 // URL: https://ui.aceternity.com/components/floating-dock
@@ -147,7 +146,6 @@ function IconContainer({
 	title,
 	icon: Icon,
 	href,
-	onClick
 }: Items & { mouseX: MotionValue }) {
 	const ref = useRef<HTMLDivElement>(null)
 

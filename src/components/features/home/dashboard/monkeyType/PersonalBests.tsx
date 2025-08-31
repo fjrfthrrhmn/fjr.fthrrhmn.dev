@@ -25,7 +25,7 @@ const PersonalBests = ({ data }: PersonalBestsProps) => {
 	const lang = useLocale() as "en" | "id"
 
 	return (
-		<div className="col-span-6 grid grid-cols-2 gap-4">
+		<div className="lg:col-span-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
 			{(Object.keys(data) as BestField[]).map((field) => (
 				<CardCustom
 					key={field}

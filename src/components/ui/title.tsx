@@ -26,7 +26,6 @@ export const Title = ({
 	text,
 	description,
 	variant = "3/extrabold",
-	as = "h2",
 	children,
 	className,
 	...props

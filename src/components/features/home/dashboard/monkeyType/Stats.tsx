@@ -1,26 +1,16 @@
-"use client";
+"use client"
 
-import { IconTimeDuration10 } from "@tabler/icons-react";
+import { useLocale } from "next-intl"
 
+import { MonkeyUserType } from "@/types/monkey-types"
 
+import { MonkeyMapStats } from "@/lib/mappers"
 
-import { MonkeyUserType } from "@/types/monkey-types";
+import { CardCustom, Typography } from "@/components/ui"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui"
+import { NumberTicker } from "@/widgets"
 
-
-
-import { MonkeyMapStats } from "@/lib/mappers";
-
-
-
-import { CardCustom, Typography } from "@/components/ui";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui";
-import { NumberTicker } from "@/widgets";
-
-
-
-import { MonkeyTypeUtils } from "../utils";
-import { useLocale } from "next-intl";
-
+import { MonkeyTypeUtils } from "../utils"
 
 type StatsProps = {
 	dataBest: MonkeyUserType["personalBests"]
@@ -33,13 +23,12 @@ const Stats = ({ dataBest, dataTime }: StatsProps) => {
 	const { ...data } = MonkeyTypeUtils.bestStats(dataBest, dataTime)
 
 	return (
-		<CardCustom
-			className="col-span-4 p-2"
-			classNameContent="grid grid-cols-4 gap-4 text-center items-center justify-center w-full h-full"
-		>
-			{MonkeyMapStats({ ...data }, lang).map((item, index) => (
-				<StatsItem key={index} {...item} />
-			))}
+		<CardCustom className="col-span-4">
+			<div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-4 sm:gap-4">
+				{MonkeyMapStats({ ...data }, lang).map((item, index) => (
+					<StatsItem key={index} {...item} />
+				))}
+			</div>
 		</CardCustom>
 	)
 }
@@ -62,7 +51,7 @@ const StatsItem = (item: {
 		<Tooltip>
 			<TooltipTrigger asChild>
 				<div
-					className={`${isTime ? "col-span-2" : ""} flex flex-col gap-2 items-center justify-center`}
+					className={`${isTime ? "lg:col-span-2" : ""} flex flex-col gap-2 items-center justify-center`}
 				>
 					<item.icon size={28} className={"text-paragraph"} />
 					<Typography.Title

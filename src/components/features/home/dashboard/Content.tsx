@@ -13,7 +13,7 @@ const Content = () => {
 	const ActiveComponent = DashboardData[isActive]
 
 	return (
-		<div className="col-span-11">
+		<div className="lg:col-span-11">
 			<AnimatePresence mode="wait">
 				{ActiveComponent && (
 					<motion.div key={isActive}>

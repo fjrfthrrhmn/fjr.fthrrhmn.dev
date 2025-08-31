@@ -1,23 +1,13 @@
-"use client";
+"use client"
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"
 
+import { BotIcon } from "lucide-react"
+import { toast } from "sonner"
 
+import { Button, CardCustom, Container, Title } from "@/components/ui"
 
-import { BotIcon } from "lucide-react";
-import { toast } from "sonner";
-
-
-
-import { Button, CardCustom, Container, Title } from "@/components/ui";
-
-
-
-import { AboutData } from "@/data/home";
-
-
-
-
+import { AboutData } from "@/data/home"
 
 const AboutSection = () => {
 	const t = useTranslations("AboutSection")

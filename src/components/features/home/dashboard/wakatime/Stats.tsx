@@ -1,22 +1,14 @@
-import { useLocale } from "next-intl";
+import { useLocale } from "next-intl"
 
+import { WakaTimeMapStats } from "@/lib/mappers"
 
-
-import { WakaTimeMapStats } from "@/lib/mappers";
-
-
-
-import { CardCustom, Typography } from "@/components/ui";
-
-
-
-
+import { CardCustom, Typography } from "@/components/ui"
 
 const Stats = ({ data }: { data: any }) => {
 	const lang = useLocale() as "en" | "id"
 
 	return (
-		<div className="grid grid-cols-2 gap-4">
+		<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 			{WakaTimeMapStats({ ...data }, lang).map((item, index) => {
 				return (
 					<CardCustom key={index} className="p-4">
