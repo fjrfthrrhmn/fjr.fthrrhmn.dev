@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl"
 
-import { Container, Title } from "@/components/ui"
+import { Container, Title } from "@/ui"
 
 import { Content, Sidebar } from "./index"
 

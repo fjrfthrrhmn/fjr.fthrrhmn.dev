@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 
 import { Button } from "@/ui"
 
-export const LanguageToggle = () => {
+const LanguageToggle = () => {
 	const router = useRouter()
 	const pathname = usePathname()
 	const locale = useLocale() as "id" | "en"
@@ -29,3 +29,5 @@ export const LanguageToggle = () => {
 		<Button onClick={switchLanguage}>{locale === "en" ? "ID" : "EN"}</Button>
 	)
 }
+
+export default LanguageToggle

@@ -1,5 +1,5 @@
-export { default as Header } from "./Header"
 export { default as Footer } from "./Footer"
-
 export { default as BuiltWith } from "./BuiltWith"
 export { default as Navigation } from "./Navigation"
+export { default as CTA } from "./CTA"
+export { default as LanguageToggle } from "./LanguageToggle"

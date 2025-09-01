@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useWakatime } from "@/hooks/useWakatime"
+import { useWakatimeProfile } from "@/hooks";
 
-import {
-	CategoriesWakatime,
-	HeaderWakatime,
-	LanguagesWakatime,
-	StatsWakatime
-} from "."
+
+
+import { CategoriesWakatime, HeaderWakatime, LanguagesWakatime, StatsWakatime } from ".";
+
 
 const Wakatime = () => {
-	const { response, categories, languages } = useWakatime()
-	if (!response || !languages || !categories) return null
+	const { response, categories, languages } = useWakatimeProfile()
+
+	if (!response || !categories || !languages) return null
+
 
 	return (
 		<div className="grid grid-cols-1 gap-4">

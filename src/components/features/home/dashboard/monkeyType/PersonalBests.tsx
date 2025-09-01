@@ -1,19 +1,26 @@
-import { useLocale } from "next-intl"
+import { useLocale } from "next-intl";
 
-import { ArrowUp } from "lucide-react"
 
-import { MonkeyUserType, PersonalBestItemType } from "@/types/monkey-types"
 
-import { formatDate } from "@/lib/utils"
+import { ArrowUp } from "lucide-react";
 
-import {
-	CardCustom,
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
-	Typography
-} from "@/ui"
-import { NumberTicker } from "@/widgets"
+
+
+import { MonkeyUserType, PersonalBestItemType } from "@/types";
+
+
+
+import { MonkeyMapPersonalBest } from "@/lib/mappers";
+import { formatDate } from "@/lib/utils";
+
+
+
+import { CardCustom, Tooltip, TooltipContent, TooltipTrigger, Typography } from "@/ui";
+import { NumberTicker } from "@/widgets";
+
+
+
+
 
 type PersonalBestsProps = {
 	data: MonkeyUserType["personalBests"]
@@ -25,7 +32,7 @@ const PersonalBests = ({ data }: PersonalBestsProps) => {
 	const lang = useLocale() as "en" | "id"
 
 	return (
-		<div className="lg:col-span-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
+		<div className="lg:col-span-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
 			{(Object.keys(data) as BestField[]).map((field) => (
 				<CardCustom
 					key={field}
@@ -44,6 +51,7 @@ const PersonalBests = ({ data }: PersonalBestsProps) => {
 				</CardCustom>
 			))}
 
+			{/* Information */}
 			<div className="bg-zinc-800 rounded-xl border px-4 py-1.5 w-max h-max">
 				<small className="flex gap-1 items-end">
 					{lang === "en" ? "Hover for details" : "Arahkan kursor untuk detail"}
@@ -64,6 +72,9 @@ interface BestPersonalItemProps {
 
 const BestPersonalItem = ({ field, mode, record }: BestPersonalItemProps) => {
 	const label = field === "time" ? `${mode} seconds` : `${mode} words`
+	const COLOR = {
+		TEXT: "text-amber-400",
+	}
 
 	return (
 		<Tooltip>
@@ -75,19 +86,16 @@ const BestPersonalItem = ({ field, mode, record }: BestPersonalItemProps) => {
 					<Typography.Title variant="2/black">
 						<NumberTicker
 							value={record.wpm}
-							className="font-mono my-4 text-teal-400"
+							className={`font-mono my-4 ${COLOR.TEXT}`}
 						/>
 					</Typography.Title>
 					<small>{formatDate(new Date(record.timestamp), "d MMM yyyy")}</small>
 				</div>
 			</TooltipTrigger>
+
+			{/* Content */}
 			<TooltipContent className="grid grid-cols-2 gap-x-4">
-				{[
-					{ label: "Wpm", value: record.wpm },
-					{ label: "Raw", value: record.raw },
-					{ label: "Con", value: record.consistency },
-					{ label: "Acc", value: record.acc }
-				].map(({ label, value }) => (
+				{MonkeyMapPersonalBest({ ...record }).map(({ label, value }) => (
 					<div key={label} className="w-20 flex items-center justify-between">
 						<Typography.Text className="text-background" variant="xs/normal">
 							{label}:

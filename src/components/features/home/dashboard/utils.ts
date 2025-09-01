@@ -1,12 +1,20 @@
-import { Activity } from "react-github-calendar"
+import { Activity } from "react-github-calendar";
 
-import { ContributionCalendar } from "@/types"
-import { MonkeyUserType } from "@/types/monkey-types"
+
+
+import { ContributionCalendar } from "@/types";
+import { MonkeyUserType } from "@/types/monkey-types";
+
+
+
+
+
+type Lang = "en" | "id"
 
 // ==========================
-// GitHub Utils
+// * GitHub Utils
 // ==========================
-export const calculateStreaks = (
+const calculateStreaks = (
 	weeks: { contributionDays: { date: string; contributionCount: number }[] }[]
 ): { currentStreak: number; maxStreak: number } => {
 	const days = weeks.flatMap((week) => week.contributionDays)
@@ -31,7 +39,7 @@ export const calculateStreaks = (
 	return { currentStreak, maxStreak }
 }
 
-export const transformContributions = (
+const transformContributions = (
 	weeks: ContributionCalendar["weeks"]
 ): Activity[] => {
 	const allDays = weeks.flatMap((week) => week.contributionDays)
@@ -58,7 +66,7 @@ export const GithubUtils = {
 }
 
 // ==========================
-// MonkeyType Utils
+// * MonkeyType Utils
 // ==========================
 const bestStats = (
 	personalBests: MonkeyUserType["personalBests"],
@@ -94,12 +102,28 @@ const formatTimeTyping = (seconds: number) => {
 	return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
 }
 
-export const MonkeyTypeUtils = {
-	bestStats,
-	formatTimeTyping
+const bgStreak: Record<number, string> = {
+	5: "bg-yellow-500/20 text-yellow-400",
+	10: "bg-orange-500/20 text-orange-400",
+	20: "bg-red-500/20 text-red-400"
 }
 
-type Lang = "en" | "id"
+const getBgStreak = (streak: number): string => {
+	if (streak >= 20) return bgStreak[20]
+	if (streak >= 10) return bgStreak[10]
+	if (streak >= 5) return bgStreak[5]
+	return "bg-gray-500/20 text-gray-400"
+}
+
+export const MonkeyTypeUtils = {
+	bestStats,
+	formatTimeTyping,
+	getBgStreak
+}
+
+// ==========================
+// * Wakatime Utils
+// ==========================
 
 const formatRange = (range: string, lang: Lang = "id") => {
 	const mapping: Record<Lang, Record<string, string>> = {

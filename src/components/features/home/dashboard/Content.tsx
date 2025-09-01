@@ -8,19 +8,14 @@ import { DotGrid } from "@/widgets"
 
 import { DashboardData } from "@/data/home"
 
+// TODO Kondisi dari zustand, dapatkan data loading dari global
 const Content = () => {
 	const isActive = useSidebarStore((state) => state.isActive) as ContentType
-	const ActiveComponent = DashboardData[isActive]
 
 	return (
 		<div className="lg:col-span-11">
-			<AnimatePresence mode="wait">
-				{ActiveComponent && (
-					<motion.div key={isActive}>
-						<ActiveComponent />
-					</motion.div>
-				)}
-			</AnimatePresence>
+			
+			
 			<DotGrid />
 		</div>
 	)

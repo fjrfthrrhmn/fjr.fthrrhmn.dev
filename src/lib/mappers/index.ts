@@ -1,29 +1,34 @@
-import { IconType } from "react-icons"
+import { IconType } from "react-icons";
 
-import {
-	CalendarCheck2,
-	Clock,
-	Flame,
-	FolderGit2,
-	GitFork,
-	Target,
-	Timer,
-	Zap
-} from "lucide-react"
 
-import { GithubUserType, WakatimeStatsType } from "@/types"
 
-import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils"
+import { CalendarCheck2, Clock, Flame, FolderGit2, GitFork, Target, Timer, Zap } from "lucide-react";
 
-import { formatDate } from "../utils"
+
+
+import { GithubUserType, WakatimeStatsType } from "@/types";
+
+
+
+import { formatDate } from "@/utils";
+
+
+
+import { MonkeyTypeUtils } from "@/components/features/home/dashboard/utils";
+
+
+
+
 
 type LANG = "en" | "id"
+
 interface GithubStatItem {
 	value: number
 	label: string
 	icon: IconType
 }
 
+// * GITHUB
 export function GithubMapStats(
 	contributions?: GithubUserType["contributionsCollection"]
 ): GithubStatItem[] {
@@ -46,7 +51,7 @@ type BestStats = {
 	bestAccuracy: number
 	timeTyping: number
 }
-
+// * MONKEY TYPE
 export function MonkeyMapStats(
 	{ bestWPM, bestAccuracy, timeTyping }: BestStats,
 	lang: LANG = "en"
@@ -89,6 +94,23 @@ export function MonkeyMapStats(
 	}[]
 }
 
+type PersonalBestType = {
+	wpm: number
+	raw: number
+	consistency: number
+	acc: number
+}
+
+export const MonkeyMapPersonalBest = (value: PersonalBestType) => {
+	return [
+		{ label: "Wpm", value: value.wpm },
+		{ label: "Raw", value: value.raw },
+		{ label: "Con", value: value.consistency },
+		{ label: "Acc", value: value.acc }
+	] as { label: string; value: number }[]
+}
+
+// * WAKATIME
 export function WakaTimeMapStats(value: WakatimeStatsType, lang: LANG = "en") {
 	const labels: Record<LANG, Record<string, string>> = {
 		en: {

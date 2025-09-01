@@ -1,13 +1,8 @@
-import { useTranslations } from "next-intl";
+import { useTranslations } from "next-intl"
 
+import { MessagesSquare } from "lucide-react"
 
-
-import { MessagesSquare } from "lucide-react";
-
-
-
-import { Button, CardCustom, Container, Typography } from "../ui";
-
+import { Button, CardCustom, Container, Typography } from "@/ui"
 
 const CTA = () => {
 	const t = useTranslations("CTA")
@@ -30,10 +25,10 @@ const CTA = () => {
 						<Typography.Text>{t("description")}</Typography.Text>
 					</div>
 
-						<Button size={"lg"}>
-							<MessagesSquare strokeWidth={2.5} />
-							{t("button")}
-						</Button>
+					<Button size={"lg"}>
+						<MessagesSquare strokeWidth={2.5} />
+						{t("button")}
+					</Button>
 				</div>
 			</CardCustom>
 		</Container>

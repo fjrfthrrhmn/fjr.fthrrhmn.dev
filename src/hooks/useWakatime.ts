@@ -4,7 +4,7 @@ import { WakatimeStatsType } from "@/types"
 
 import { wakatimeService } from "@/services"
 
-export const useWakatime = () => {
+export const useWakatimeProfile = () => {
 	const { data: response, ...rest } = useQuery<WakatimeStatsType>({
 		queryKey: ["wakatime-profile"],
 		queryFn: async () => {

@@ -1,13 +1,18 @@
-"use client"
+"use client";
 
-import { useGithubProfile } from "@/hooks"
-import { GithubMapStats } from "@/lib/mappers"
+import { useGithubProfile } from "@/hooks";
+import { GithubMapStats } from "@/lib/mappers";
 
-import { CardCustom, Typography } from "@/components/ui"
-import { NumberTicker } from "@/widgets"
 
-import { StreakCardGithub } from "."
-import { GithubUtils } from "../utils"
+
+import { CardCustom, Typography } from "@/components/ui";
+import { NumberTicker } from "@/widgets";
+
+
+
+import { StreakCardGithub } from ".";
+import { GithubUtils } from "../utils";
+
 
 const Stats = () => {
 	const { contributions } = useGithubProfile()
@@ -16,8 +21,14 @@ const Stats = () => {
 	const { currentStreak, maxStreak } =
 		GithubUtils.calculateStreaks(contributionCalendar)
 
+	const COLOR = {
+		TEXT: "text-[#34d399]",
+		UNDERLINE: "decoration-[#34d399]"
+	}
+	
+
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
+		<div className="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ">
 			{GithubMapStats(contributions)?.map((stat, index) => (
 				<CardCustom
 					key={index}
@@ -27,8 +38,11 @@ const Stats = () => {
 					iconSize={150}
 				>
 					<div className=" relative z-20 flex p-4 flex-col items-center justify-center text-center gap-2">
-						<Typography.Title variant="3/black" className="font-mono">
-							<NumberTicker value={stat.value} />
+						<Typography.Title variant="3/black">
+							<NumberTicker
+								value={stat.value}
+								className={`font-mono ${COLOR.TEXT}`}
+							/>
 						</Typography.Title>
 						<Typography.Text variant="xs/semibold" className="text-foreground">
 							{stat.label}

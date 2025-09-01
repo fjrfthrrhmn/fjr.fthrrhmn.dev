@@ -3,3 +3,6 @@ export { default as Content } from "./Content"
 export { default as MonkeyTypeContent } from "./monkeyType/MonkeyType"
 export { default as WakatimeContent } from "./wakatime/Wakatime"
 export { default as GithubContent } from "./github/Github"
+
+export { GithubUtils, MonkeyTypeUtils, WakatimeUtils } from "./utils"
+export { GithubConfig } from "./config"

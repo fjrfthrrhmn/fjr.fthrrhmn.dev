@@ -8,17 +8,23 @@ import { GithubUserType } from "@/types"
 
 import { Avatar, CardCustom, Typography } from "@/components/ui"
 
-type ProfileProps = Pick<
-	GithubUserType,
-	"name" | "url" | "avatarUrl" | "bio" | "followers" | "following" | "login"
->
+type ProfileProps = {
+	profile: Pick<
+		GithubUserType,
+		"name" | "url" | "avatarUrl" | "bio" | "followers" | "following" | "login"
+	>
+}
 
-const Profile = ({ ...props }: ProfileProps) => {
-	const { avatarUrl, login, name, url } = props
+const Profile = ({ profile }: ProfileProps) => {
+	const { avatarUrl, name, url, bio } = profile
+	const COLOR = {
+		TEXT: "text-[#34d399]",
+		UNDERLINE: "decoration-[#34d399]"
+	}
 
 	return (
-		<CardCustom>
-			<div className="flex flex-col sm:flex-row gap-4">
+		<CardCustom className="lg:col-span-2">
+			<div className="flex flex-col sm:flex-row lg:flex-col gap-4">
 				<Avatar size="size-16">
 					<Image
 						src={
@@ -34,19 +40,17 @@ const Profile = ({ ...props }: ProfileProps) => {
 
 				<div className="flex flex-col">
 					<div className="flex gap-2 items-center">
-						<Typography.Text variant="sm/semibold" className="text-foreground">
-							{name}
-						</Typography.Text>
+						<Link href={url} target="_blank" rel="">
+							<Typography.Title
+								variant="6/normal"
+								className={`capitalize decoration-2 underline underline-offset-4 ${COLOR.UNDERLINE}`}
+							>
+								{name}
+							</Typography.Title>
+						</Link>
 						<MdVerified className="text-blue-400" size={20} />
 					</div>
-					<Link href={url || "#"}>
-						<Typography.Text
-							variant="xs/normal"
-							className="underline underline-offset-4"
-						>
-							@{login}
-						</Typography.Text>
-					</Link>
+					<Typography.Text variant="xs/normal">{bio}</Typography.Text>
 				</div>
 			</div>
 		</CardCustom>

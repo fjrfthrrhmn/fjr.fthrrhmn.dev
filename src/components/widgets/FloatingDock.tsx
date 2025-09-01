@@ -21,8 +21,7 @@ import {
 	TooltipContent,
 	TooltipTrigger
 } from "@/components/ui/tooltip"
-
-import { LanguageToggle } from "../shared/LanguageToggle"
+import { LanguageToggle } from "@/shared"
 
 /**
  * Note: Use position fixed according to your needs

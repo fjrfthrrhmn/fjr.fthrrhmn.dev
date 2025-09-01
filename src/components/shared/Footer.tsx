@@ -1,4 +1,4 @@
-import { Typography } from "../ui"
+import { Typography } from "@/ui"
 
 const Footer = () => {
 	return (

@@ -67,6 +67,9 @@ const CardCustom = ({
 					"[mask-image:radial-gradient(ellipse_at_bottom_right,white_10%,transparent_90%)]"
 				)}
 			/>
+
+			{/* Background color */}
+			{/* <div className="w-72 h-72 absolute -right-4 -bottom-12 rounded-full bg-amber-400/15 blur-2xl" /> */}
 		</div>
 	)
 }
